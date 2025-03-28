@@ -1,0 +1,15 @@
+export { AggregateProblemArgs } from "./AggregateProblemArgs";
+export { CreateManyAndReturnProblemArgs } from "./CreateManyAndReturnProblemArgs";
+export { CreateManyProblemArgs } from "./CreateManyProblemArgs";
+export { CreateOneProblemArgs } from "./CreateOneProblemArgs";
+export { DeleteManyProblemArgs } from "./DeleteManyProblemArgs";
+export { DeleteOneProblemArgs } from "./DeleteOneProblemArgs";
+export { FindFirstProblemArgs } from "./FindFirstProblemArgs";
+export { FindFirstProblemOrThrowArgs } from "./FindFirstProblemOrThrowArgs";
+export { FindManyProblemArgs } from "./FindManyProblemArgs";
+export { FindUniqueProblemArgs } from "./FindUniqueProblemArgs";
+export { FindUniqueProblemOrThrowArgs } from "./FindUniqueProblemOrThrowArgs";
+export { GroupByProblemArgs } from "./GroupByProblemArgs";
+export { UpdateManyProblemArgs } from "./UpdateManyProblemArgs";
+export { UpdateOneProblemArgs } from "./UpdateOneProblemArgs";
+export { UpsertOneProblemArgs } from "./UpsertOneProblemArgs";
