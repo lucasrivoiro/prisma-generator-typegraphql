@@ -1,46 +1,23 @@
 ![integration logo](https://raw.githubusercontent.com/MichalLytek/typegraphql-prisma/main/img/integration.png)
 
-[![discord](https://img.shields.io/discord/1195751245386875040?logo=discord&color=%237289da)](https://discord.gg/cWnBAQcbg2)
-[![npm](https://img.shields.io/npm/v/typegraphql-prisma?logo=npm&color=%23CC3534)](https://www.npmjs.com/package/typegraphql-prisma)
-
 # TypeGraphQL & Prisma integration
 
-Prisma generator to emit TypeGraphQL types and CRUD resolvers from your Prisma schema.
+Prisma generator to emit TypeGraphQL types and CRUD resolvers from your Prisma schema. This project is a copy of [**typegraphql-prisma**](https://github.com/MichalLytek/typegraphql-prisma), and I intend to keep it updated, implementing new features as Prisma is updated.
+
+For now, only the upgrade to version 6 of Prisma has been done. The tests are failing, however, the simple update has been sufficient for my production projects and has not presented any failures. But since I do not yet know well the code produced by Michael Lytek, I recommend that you test it thoroughly before using it. For now, it is at your own risk.
+
+As soon as possible, I will be fixing the failing tests.
+
+Feel free to send PRs with improvements and new features. Let's keep this lib together!
 
 [**https://prisma.typegraphql.com**](https://prisma.typegraphql.com)
 
 ## Documentation
 
-The documentation, installation guide, detailed description of the API and all of its features is [available on the website](https://prisma.typegraphql.com).
+The documentation, installation guide, detailed description of the API and all of its features is [available on the original website](https://prisma.typegraphql.com). In the future, I will be implementing a dedicated website for this lib's documentation.
 
 ## Examples
 
 You can check out some usage examples on this repo:
 
-https://github.com/MichalLytek/typegraphql-prisma/blob/main/examples/Readme.md
-
-## Feedback
-
-Currently released version `0.x` is just a preview of the upcoming integration. For now it lacks some customization option - picking models or fields of object types to expose in the schema, hiding input fields as well as picking exposed args fields. However, the base functionality is working well, so I strongly encourage you to give it a try and play with it.
-
-Any feedback about the developers experience or ideas about new features or enhancements are very welcome - please feel free to put your two cents by using the [GitHub Discussions feature](https://github.com/MichalLytek/typegraphql-prisma/discussions/new):
-
-<img src="https://raw.githubusercontent.com/MichalLytek/typegraphql-prisma/main/img/feedback.png" width="327"/>
-
-## Security contact information
-
-To report a security vulnerability, please use the
-[Tidelift security contact](https://tidelift.com/security).
-Tidelift will coordinate the fix and disclosure.
-
-## Future of this project
-
-This project is not sponsored by Prisma anymore, so there will be provided only bug fixes and Prisma compatibility upgrades.
-You can read more about this in the GitHub issue [#385](https://github.com/MichalLytek/typegraphql-prisma/issues/385).
-
-Let's keep `typegraphql-prisma` alive together! 💪
-
-## Community
-
-- Visit the [Official Website](https://prisma.typegraphql.com)
-- Chat on [Discord](https://discord.gg/cWnBAQcbg2)
+https://github.com/lucasrivoiro/prisma-generator-typegraphql/tree/main/examples/Readme.md
