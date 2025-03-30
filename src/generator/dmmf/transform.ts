@@ -120,6 +120,7 @@ function transformModelField(dmmfDocument: DmmfDocument) {
       output: boolean;
       input: boolean | InputOmitSetting[];
     }>(field.documentation, "omit", "field");
+    // @ts-expect-error
     return {
       ...field,
       type: field.type, // TS type check limitation
