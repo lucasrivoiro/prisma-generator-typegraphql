@@ -105,5 +105,5 @@
       "prettier --write"
     ]
   },
-  "private": true
+  "private": false
 }
