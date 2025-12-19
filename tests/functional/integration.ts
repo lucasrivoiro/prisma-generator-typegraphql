@@ -27,7 +27,7 @@ describe("generator integration", () => {
       }
 
       generator client {
-        provider = "prisma-client-js"
+        provider = "prisma-client"
         output   = "./generated/client"
       }
 

@@ -4,7 +4,7 @@ datasource postgres {
 }
 
 generator client {
-  provider        = "prisma-client-js"
+  provider        = "prisma-client"
   // binaryTargets   = ["windows", "debian-openssl-1.1.x"]
   output          = "../prisma/generated/client"
   previewFeatures = ["fullTextSearch"]
