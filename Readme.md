@@ -4,9 +4,18 @@
 
 Prisma generator to emit TypeGraphQL types and CRUD resolvers from your Prisma schema. This project is a copy of [**typegraphql-prisma**](https://github.com/MichalLytek/typegraphql-prisma), and I intend to keep it updated, implementing new features as Prisma is updated.
 
-For now, only the upgrade to version 6 of Prisma has been done. The tests are failing, however, the simple update has been sufficient for my production projects and has not presented any failures. But since I do not yet know well the code produced by Michael Lytek, I recommend that you test it thoroughly before using it. For now, it is at your own risk.
+## ✅ Prisma 7 Support
 
-As soon as possible, I will be fixing the failing tests.
+This library now fully supports **Prisma 7**, including all breaking changes and new features. All tests are passing and the generator is production-ready.
+
+### Version compatibility:
+
+| Library Version | Prisma Version |
+|-----------------|----------------|
+| `1.0.0`         | Prisma 7.x     |
+| `0.1.0`         | Prisma 5.18.0+ / 6.x |
+
+> ⚠️ **Important:** If you are using Prisma 5 or 6, install version `0.1.0`. Version `1.0.0` is only compatible with Prisma 7.
 
 Feel free to send PRs with improvements and new features. Let's keep this lib together!
 
