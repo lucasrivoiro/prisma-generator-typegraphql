@@ -537,10 +537,18 @@ function getPrismaMethodName(actionKind: DMMF.ModelAction) {
 }
 
 const ENUM_SUFFIXES = ["OrderByRelevanceFieldEnum", "ScalarFieldEnum"] as const;
+
+// Type for schema enums which have values as string[] (DatamodelSchemaEnum in Prisma 7+)
+type SchemaEnumWithStringValues = {
+  name: string;
+  values: readonly string[];
+};
+
+// Union type for all possible enum types
+type AnyEnumDef = PrismaDMMF.DatamodelEnum | SchemaEnumWithStringValues;
+
 export function transformEnums(dmmfDocument: DmmfDocument) {
-  return (
-    enumDef: PrismaDMMF.DatamodelEnum | PrismaDMMF.SchemaEnum,
-  ): DMMF.Enum => {
+  return (enumDef: AnyEnumDef): DMMF.Enum => {
     let modelName: string | undefined = undefined;
     let typeName = enumDef.name;
     const detectedSuffix = ENUM_SUFFIXES.find(suffix =>
@@ -550,10 +558,12 @@ export function transformEnums(dmmfDocument: DmmfDocument) {
       modelName = enumDef.name.replace(detectedSuffix, "");
       typeName = `${dmmfDocument.getModelTypeName(modelName)}${detectedSuffix}`;
     }
-    const enumValues = enumDef.values as Array<
-      | PrismaDMMF.DatamodelEnum["values"][number]
-      | PrismaDMMF.SchemaEnum["values"][number]
-    >;
+
+    // Handle both DatamodelEnum (values as objects) and SchemaEnumWithStringValues (values as strings)
+    const enumValues = enumDef.values as readonly (
+      | string
+      | { name: string; dbName: string | null }
+    )[];
 
     return {
       ...enumDef,
