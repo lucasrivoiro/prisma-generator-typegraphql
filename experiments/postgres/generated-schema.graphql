@@ -182,17 +182,6 @@ input CategoryMinOrderByAggregateInput {
   slug: SortOrder
 }
 
-enum CategoryOrderByRelevanceFieldEnum {
-  name
-  slug
-}
-
-input CategoryOrderByRelevanceInput {
-  fields: [CategoryOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input CategoryOrderByWithAggregationInput {
   _avg: CategoryAvgOrderByAggregateInput
   _count: CategoryCountOrderByAggregateInput
@@ -205,7 +194,6 @@ input CategoryOrderByWithAggregationInput {
 }
 
 input CategoryOrderByWithRelationInput {
-  _relevance: CategoryOrderByRelevanceInput
   name: SortOrder
   number: SortOrder
   slug: SortOrder
@@ -418,23 +406,13 @@ input CreatorMinOrderByAggregateInput {
   name: SortOrder
 }
 
-input CreatorNullableRelationFilter {
+input CreatorNullableScalarRelationFilter {
   is: CreatorWhereInput
   isNot: CreatorWhereInput
 }
 
 input CreatorOrderByRelationAggregateInput {
   _count: SortOrder
-}
-
-enum CreatorOrderByRelevanceFieldEnum {
-  name
-}
-
-input CreatorOrderByRelevanceInput {
-  fields: [CreatorOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
 }
 
 input CreatorOrderByWithAggregationInput {
@@ -448,7 +426,6 @@ input CreatorOrderByWithAggregationInput {
 }
 
 input CreatorOrderByWithRelationInput {
-  _relevance: CreatorOrderByRelevanceInput
   id: SortOrder
   likes: ProblemOrderByRelationAggregateInput
   name: SortOrder
@@ -718,17 +695,6 @@ input DirectorMinOrderByAggregateInput {
   lastName: SortOrder
 }
 
-enum DirectorOrderByRelevanceFieldEnum {
-  firstName
-  lastName
-}
-
-input DirectorOrderByRelevanceInput {
-  fields: [DirectorOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input DirectorOrderByWithAggregationInput {
   _count: DirectorCountOrderByAggregateInput
   _max: DirectorMaxOrderByAggregateInput
@@ -738,20 +704,19 @@ input DirectorOrderByWithAggregationInput {
 }
 
 input DirectorOrderByWithRelationInput {
-  _relevance: DirectorOrderByRelevanceInput
   firstName: SortOrder
   lastName: SortOrder
   movies: MovieOrderByRelationAggregateInput
 }
 
-input DirectorRelationFilter {
-  is: DirectorWhereInput
-  isNot: DirectorWhereInput
-}
-
 enum DirectorScalarFieldEnum {
   firstName
   lastName
+}
+
+input DirectorScalarRelationFilter {
+  is: DirectorWhereInput
+  isNot: DirectorWhereInput
 }
 
 input DirectorScalarWhereWithAggregatesInput {
@@ -932,17 +897,6 @@ input HiddenMinOrderByAggregateInput {
   name: SortOrder
 }
 
-enum HiddenOrderByRelevanceFieldEnum {
-  id
-  name
-}
-
-input HiddenOrderByRelevanceInput {
-  fields: [HiddenOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input HiddenOrderByWithAggregationInput {
   _count: HiddenCountOrderByAggregateInput
   _max: HiddenMaxOrderByAggregateInput
@@ -952,7 +906,6 @@ input HiddenOrderByWithAggregationInput {
 }
 
 input HiddenOrderByWithRelationInput {
-  _relevance: HiddenOrderByRelevanceInput
   id: SortOrder
   name: SortOrderInput
 }
@@ -1072,6 +1025,7 @@ input JsonFilter {
   gte: JSON
   lt: JSON
   lte: JSON
+  mode: QueryMode
   not: JSON
   path: [String!]
   string_contains: String
@@ -1091,6 +1045,7 @@ input JsonWithAggregatesFilter {
   gte: JSON
   lt: JSON
   lte: JSON
+  mode: QueryMode
   not: JSON
   path: [String!]
   string_contains: String
@@ -1292,18 +1247,6 @@ input MainUserMinOrderByAggregateInput {
   role: SortOrder
 }
 
-enum MainUserOrderByRelevanceFieldEnum {
-  aliases
-  email
-  firstName
-}
-
-input MainUserOrderByRelevanceInput {
-  fields: [MainUserOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input MainUserOrderByWithAggregationInput {
   _avg: MainUserAvgOrderByAggregateInput
   _count: MainUserCountOrderByAggregateInput
@@ -1322,7 +1265,6 @@ input MainUserOrderByWithAggregationInput {
 }
 
 input MainUserOrderByWithRelationInput {
-  _relevance: MainUserOrderByRelevanceInput
   accountBalance: SortOrder
   age: SortOrder
   aliases: SortOrder
@@ -1334,11 +1276,6 @@ input MainUserOrderByWithRelationInput {
   grades: SortOrder
   id: SortOrder
   role: SortOrder
-}
-
-input MainUserRelationFilter {
-  is: MainUserWhereInput
-  isNot: MainUserWhereInput
 }
 
 enum MainUserScalarFieldEnum {
@@ -1611,18 +1548,6 @@ input MovieOrderByRelationAggregateInput {
   _count: SortOrder
 }
 
-enum MovieOrderByRelevanceFieldEnum {
-  directorFirstName
-  directorLastName
-  title
-}
-
-input MovieOrderByRelevanceInput {
-  fields: [MovieOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input MovieOrderByWithAggregationInput {
   _count: MovieCountOrderByAggregateInput
   _max: MovieMaxOrderByAggregateInput
@@ -1633,7 +1558,6 @@ input MovieOrderByWithAggregationInput {
 }
 
 input MovieOrderByWithRelationInput {
-  _relevance: MovieOrderByRelevanceInput
   director: DirectorOrderByWithRelationInput
   directorFirstName: SortOrder
   directorLastName: SortOrder
@@ -1711,7 +1635,7 @@ input MovieWhereInput {
   AND: [MovieWhereInput!]
   NOT: [MovieWhereInput!]
   OR: [MovieWhereInput!]
-  director: DirectorRelationFilter
+  director: DirectorScalarRelationFilter
   directorFirstName: StringFilter
   directorLastName: StringFilter
   title: StringFilter
@@ -1721,7 +1645,7 @@ input MovieWhereUniqueInput {
   AND: [MovieWhereInput!]
   NOT: [MovieWhereInput!]
   OR: [MovieWhereInput!]
-  director: DirectorRelationFilter
+  director: DirectorScalarRelationFilter
   directorFirstName: StringFilter
   directorLastName: StringFilter
   movieCompoundId: MovieMovieCompoundIdCompoundUniqueInput
@@ -1755,14 +1679,14 @@ type Mutation {
   createOnePost(data: PostCreateInput!): Post!
   createOneProblem(data: ProblemCreateInput!): Problem!
   customCreatePost(data: PostCreateInput!): Post!
-  deleteManyCreator(where: CreatorWhereInput): AffectedRowsOutput!
-  deleteManyDirector(where: DirectorWhereInput): AffectedRowsOutput!
-  deleteManyHidden(where: HiddenWhereInput): AffectedRowsOutput!
-  deleteManyMainUser(where: MainUserWhereInput): AffectedRowsOutput!
-  deleteManyMovie(where: MovieWhereInput): AffectedRowsOutput!
-  deleteManyNativeTypeModel(where: NativeTypeModelWhereInput): AffectedRowsOutput!
-  deleteManyPatient(where: PatientWhereInput): AffectedRowsOutput!
-  deleteManyProblem(where: ProblemWhereInput): AffectedRowsOutput!
+  deleteManyCreator(limit: Int, where: CreatorWhereInput): AffectedRowsOutput!
+  deleteManyDirector(limit: Int, where: DirectorWhereInput): AffectedRowsOutput!
+  deleteManyHidden(limit: Int, where: HiddenWhereInput): AffectedRowsOutput!
+  deleteManyMainUser(limit: Int, where: MainUserWhereInput): AffectedRowsOutput!
+  deleteManyMovie(limit: Int, where: MovieWhereInput): AffectedRowsOutput!
+  deleteManyNativeTypeModel(limit: Int, where: NativeTypeModelWhereInput): AffectedRowsOutput!
+  deleteManyPatient(limit: Int, where: PatientWhereInput): AffectedRowsOutput!
+  deleteManyProblem(limit: Int, where: ProblemWhereInput): AffectedRowsOutput!
   deleteOneCreator(where: CreatorWhereUniqueInput!): Creator
   deleteOneDirector(where: DirectorWhereUniqueInput!): Director
   deleteOneHidden(where: HiddenWhereUniqueInput!): Hidden
@@ -1771,15 +1695,15 @@ type Mutation {
   deleteOneNativeTypeModel(where: NativeTypeModelWhereUniqueInput!): NativeTypeModel
   deleteOnePatient(where: PatientWhereUniqueInput!): Patient
   deleteOneProblem(where: ProblemWhereUniqueInput!): Problem
-  updateManyCreator(data: CreatorUpdateManyMutationInput!, where: CreatorWhereInput): AffectedRowsOutput!
-  updateManyDirector(data: DirectorUpdateManyMutationInput!, where: DirectorWhereInput): AffectedRowsOutput!
-  updateManyHidden(data: HiddenUpdateManyMutationInput!, where: HiddenWhereInput): AffectedRowsOutput!
-  updateManyMainUser(data: MainUserUpdateManyMutationInput!, where: MainUserWhereInput): AffectedRowsOutput!
-  updateManyMovie(data: MovieUpdateManyMutationInput!, where: MovieWhereInput): AffectedRowsOutput!
-  updateManyNativeTypeModel(data: NativeTypeModelUpdateManyMutationInput!, where: NativeTypeModelWhereInput): AffectedRowsOutput!
-  updateManyPatient(data: PatientUpdateManyMutationInput!, where: PatientWhereInput): AffectedRowsOutput!
-  updateManyPost(data: PostUpdateManyMutationInput!, where: PostWhereInput): AffectedRowsOutput!
-  updateManyProblem(data: ProblemUpdateManyMutationInput!, where: ProblemWhereInput): AffectedRowsOutput!
+  updateManyCreator(data: CreatorUpdateManyMutationInput!, limit: Int, where: CreatorWhereInput): AffectedRowsOutput!
+  updateManyDirector(data: DirectorUpdateManyMutationInput!, limit: Int, where: DirectorWhereInput): AffectedRowsOutput!
+  updateManyHidden(data: HiddenUpdateManyMutationInput!, limit: Int, where: HiddenWhereInput): AffectedRowsOutput!
+  updateManyMainUser(data: MainUserUpdateManyMutationInput!, limit: Int, where: MainUserWhereInput): AffectedRowsOutput!
+  updateManyMovie(data: MovieUpdateManyMutationInput!, limit: Int, where: MovieWhereInput): AffectedRowsOutput!
+  updateManyNativeTypeModel(data: NativeTypeModelUpdateManyMutationInput!, limit: Int, where: NativeTypeModelWhereInput): AffectedRowsOutput!
+  updateManyPatient(data: PatientUpdateManyMutationInput!, limit: Int, where: PatientWhereInput): AffectedRowsOutput!
+  updateManyPost(data: PostUpdateManyMutationInput!, limit: Int, where: PostWhereInput): AffectedRowsOutput!
+  updateManyProblem(data: ProblemUpdateManyMutationInput!, limit: Int, where: ProblemWhereInput): AffectedRowsOutput!
   updateOneCreator(data: CreatorUpdateInput!, where: CreatorWhereUniqueInput!): Creator
   updateOneDirector(data: DirectorUpdateInput!, where: DirectorWhereUniqueInput!): Director
   updateOneHidden(data: HiddenUpdateInput!, where: HiddenWhereUniqueInput!): Hidden
@@ -2196,6 +2120,7 @@ input NestedJsonFilter {
   gte: JSON
   lt: JSON
   lte: JSON
+  mode: QueryMode
   not: JSON
   path: [String!]
   string_contains: String
@@ -2214,7 +2139,6 @@ input NestedStringFilter {
   lte: String
   not: NestedStringFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -2229,7 +2153,6 @@ input NestedStringNullableFilter {
   lte: String
   not: NestedStringNullableFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -2247,7 +2170,6 @@ input NestedStringNullableWithAggregatesFilter {
   lte: String
   not: NestedStringNullableWithAggregatesFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -2265,7 +2187,6 @@ input NestedStringWithAggregatesFilter {
   lte: String
   not: NestedStringWithAggregatesFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -2343,18 +2264,6 @@ input PatientMinOrderByAggregateInput {
   lastName: SortOrder
 }
 
-enum PatientOrderByRelevanceFieldEnum {
-  email
-  firstName
-  lastName
-}
-
-input PatientOrderByRelevanceInput {
-  fields: [PatientOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input PatientOrderByWithAggregationInput {
   _count: PatientCountOrderByAggregateInput
   _max: PatientMaxOrderByAggregateInput
@@ -2365,7 +2274,6 @@ input PatientOrderByWithAggregationInput {
 }
 
 input PatientOrderByWithRelationInput {
-  _relevance: PatientOrderByRelevanceInput
   email: SortOrder
   firstName: SortOrder
   lastName: SortOrder
@@ -2648,19 +2556,6 @@ input PostOrderByRelationAggregateInput {
   _count: SortOrder
 }
 
-enum PostOrderByRelevanceFieldEnum {
-  content
-  subtitle
-  title
-  uuid
-}
-
-input PostOrderByRelevanceInput {
-  fields: [PostOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input PostOrderByWithAggregationInput {
   _avg: PostAvgOrderByAggregateInput
   _count: PostCountOrderByAggregateInput
@@ -2680,7 +2575,6 @@ input PostOrderByWithAggregationInput {
 }
 
 input PostOrderByWithRelationInput {
-  _relevance: PostOrderByRelevanceInput
   author: MainUserOrderByWithRelationInput
   authorId: SortOrder
   content: SortOrderInput
@@ -2847,11 +2741,11 @@ input PostWhereInput {
   AND: [PostWhereInput!]
   NOT: [PostWhereInput!]
   OR: [PostWhereInput!]
-  author: MainUserRelationFilter
+  author: UserScalarRelationFilter
   authorId: IntFilter
   content: StringNullableFilter
   createdAt: DateTimeFilter
-  editor: UserNullableRelationFilter
+  editor: UserNullableScalarRelationFilter
   editorId: IntNullableFilter
   kind: EnumPostKindNullableFilter
   metadata: JsonFilter
@@ -2865,11 +2759,11 @@ input PostWhereUniqueInput {
   AND: [PostWhereInput!]
   NOT: [PostWhereInput!]
   OR: [PostWhereInput!]
-  author: MainUserRelationFilter
+  author: UserScalarRelationFilter
   authorId: IntFilter
   content: StringNullableFilter
   createdAt: DateTimeFilter
-  editor: UserNullableRelationFilter
+  editor: UserNullableScalarRelationFilter
   editorId: IntNullableFilter
   kind: EnumPostKindNullableFilter
   metadata: JsonFilter
@@ -3015,16 +2909,6 @@ input ProblemOrderByRelationAggregateInput {
   _count: SortOrder
 }
 
-enum ProblemOrderByRelevanceFieldEnum {
-  problemText
-}
-
-input ProblemOrderByRelevanceInput {
-  fields: [ProblemOrderByRelevanceFieldEnum!]!
-  search: String!
-  sort: SortOrder!
-}
-
 input ProblemOrderByWithAggregationInput {
   _avg: ProblemAvgOrderByAggregateInput
   _count: ProblemCountOrderByAggregateInput
@@ -3037,7 +2921,6 @@ input ProblemOrderByWithAggregationInput {
 }
 
 input ProblemOrderByWithRelationInput {
-  _relevance: ProblemOrderByRelevanceInput
   creator: CreatorOrderByWithRelationInput
   creatorId: SortOrderInput
   id: SortOrder
@@ -3162,7 +3045,7 @@ input ProblemWhereInput {
   AND: [ProblemWhereInput!]
   NOT: [ProblemWhereInput!]
   OR: [ProblemWhereInput!]
-  creator: CreatorNullableRelationFilter
+  creator: CreatorNullableScalarRelationFilter
   creatorId: IntNullableFilter
   id: IntFilter
   likedBy: CreatorListRelationFilter
@@ -3173,7 +3056,7 @@ input ProblemWhereUniqueInput {
   AND: [ProblemWhereInput!]
   NOT: [ProblemWhereInput!]
   OR: [ProblemWhereInput!]
-  creator: CreatorNullableRelationFilter
+  creator: CreatorNullableScalarRelationFilter
   creatorId: IntNullableFilter
   id: Int
   likedBy: CreatorListRelationFilter
@@ -3280,7 +3163,6 @@ input StringFilter {
   mode: QueryMode
   not: NestedStringFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -3296,7 +3178,6 @@ input StringNullableFilter {
   mode: QueryMode
   not: NestedStringNullableFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -3323,7 +3204,6 @@ input StringNullableWithAggregatesFilter {
   mode: QueryMode
   not: NestedStringNullableWithAggregatesFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
@@ -3342,11 +3222,15 @@ input StringWithAggregatesFilter {
   mode: QueryMode
   not: NestedStringWithAggregatesFilter
   notIn: [String!]
-  search: String
   startsWith: String
 }
 
-input UserNullableRelationFilter {
+input UserNullableScalarRelationFilter {
+  is: MainUserWhereInput
+  isNot: MainUserWhereInput
+}
+
+input UserScalarRelationFilter {
   is: MainUserWhereInput
   isNot: MainUserWhereInput
 }

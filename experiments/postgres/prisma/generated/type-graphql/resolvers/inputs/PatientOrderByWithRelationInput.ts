@@ -2,7 +2,6 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "../../../client";
 import { DecimalJSScalar } from "../../scalars";
-import { PatientOrderByRelevanceInput } from "../inputs/PatientOrderByRelevanceInput";
 import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("PatientOrderByWithRelationInput", {})
@@ -21,9 +20,4 @@ export class PatientOrderByWithRelationInput {
     nullable: true
   })
   email?: "asc" | "desc" | undefined;
-
-  @TypeGraphQL.Field(_type => PatientOrderByRelevanceInput, {
-    nullable: true
-  })
-  _relevance?: PatientOrderByRelevanceInput | undefined;
 }

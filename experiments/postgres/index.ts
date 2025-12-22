@@ -20,6 +20,8 @@ import {
   NotEquals,
   ValidateNested,
 } from "class-validator";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 import {
   MainUser,
@@ -60,7 +62,7 @@ import {
   RelationResolverActionsConfig,
   HiddenCrudResolver,
 } from "./prisma/generated/type-graphql";
-import * as Prisma from "./prisma/generated/client";
+import * as Prisma from "./prisma/generated/client/client";
 import { ProblemCrudResolver } from "./prisma/generated/type-graphql/resolvers/crud/Problem/ProblemCrudResolver";
 import { CreatorCrudResolver } from "./prisma/generated/type-graphql/resolvers/crud/Creator/CreatorCrudResolver";
 import { createYoga } from "graphql-yoga";
@@ -296,7 +298,12 @@ async function main() {
     },
   });
 
+  const connectionString = process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/postgres";
+  const pool = new Pool({ connectionString });
+  const adapter = new PrismaPg(pool);
+
   const prisma = new Prisma.PrismaClient({
+    adapter,
     // see dataloader for relations in action
     log: ["query"],
   });

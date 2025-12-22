@@ -1,6 +1,12 @@
 import { PrismaClient, PostKind, Prisma } from "./generated/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
 
-const prisma = new PrismaClient({});
+const connectionString = process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/postgres";
+const pool = new Pool({ connectionString });
+const adapter = new PrismaPg(pool);
+
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   await prisma.$connect();
@@ -160,7 +166,7 @@ async function main() {
     data: {
       bigInt: BigInt("123456789123456789"),
       decimal: new Prisma.Decimal(21.37),
-      byteA: Buffer.from([4, 8, 15, 16, 23, 42]),
+      byteA: new Uint8Array([4, 8, 15, 16, 23, 42]),
     },
   });
 

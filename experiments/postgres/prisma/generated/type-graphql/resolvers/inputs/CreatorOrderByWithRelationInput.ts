@@ -2,7 +2,6 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "../../../client";
 import { DecimalJSScalar } from "../../scalars";
-import { CreatorOrderByRelevanceInput } from "../inputs/CreatorOrderByRelevanceInput";
 import { ProblemOrderByRelationAggregateInput } from "../inputs/ProblemOrderByRelationAggregateInput";
 import { SortOrder } from "../../enums/SortOrder";
 
@@ -27,9 +26,4 @@ export class CreatorOrderByWithRelationInput {
     nullable: true
   })
   problems?: ProblemOrderByRelationAggregateInput | undefined;
-
-  @TypeGraphQL.Field(_type => CreatorOrderByRelevanceInput, {
-    nullable: true
-  })
-  _relevance?: CreatorOrderByRelevanceInput | undefined;
 }

@@ -8,10 +8,10 @@ import { EnumPostKindNullableFilter } from "../inputs/EnumPostKindNullableFilter
 import { IntFilter } from "../inputs/IntFilter";
 import { IntNullableFilter } from "../inputs/IntNullableFilter";
 import { JsonFilter } from "../inputs/JsonFilter";
-import { MainUserRelationFilter } from "../inputs/MainUserRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { StringNullableFilter } from "../inputs/StringNullableFilter";
-import { UserNullableRelationFilter } from "../inputs/UserNullableRelationFilter";
+import { UserNullableScalarRelationFilter } from "../inputs/UserNullableScalarRelationFilter";
+import { UserScalarRelationFilter } from "../inputs/UserScalarRelationFilter";
 
 @TypeGraphQL.InputType("PostWhereInput", {})
 export class PostWhereInput {
@@ -80,13 +80,13 @@ export class PostWhereInput {
   })
   metadata?: JsonFilter | undefined;
 
-  @TypeGraphQL.Field(_type => MainUserRelationFilter, {
+  @TypeGraphQL.Field(_type => UserScalarRelationFilter, {
     nullable: true
   })
-  author?: MainUserRelationFilter | undefined;
+  author?: UserScalarRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => UserNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => UserNullableScalarRelationFilter, {
     nullable: true
   })
-  editor?: UserNullableRelationFilter | undefined;
+  editor?: UserNullableScalarRelationFilter | undefined;
 }

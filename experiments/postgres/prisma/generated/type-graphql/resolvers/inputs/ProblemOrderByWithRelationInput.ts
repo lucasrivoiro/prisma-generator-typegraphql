@@ -4,7 +4,6 @@ import { Prisma } from "../../../client";
 import { DecimalJSScalar } from "../../scalars";
 import { CreatorOrderByRelationAggregateInput } from "../inputs/CreatorOrderByRelationAggregateInput";
 import { CreatorOrderByWithRelationInput } from "../inputs/CreatorOrderByWithRelationInput";
-import { ProblemOrderByRelevanceInput } from "../inputs/ProblemOrderByRelevanceInput";
 import { SortOrderInput } from "../inputs/SortOrderInput";
 import { SortOrder } from "../../enums/SortOrder";
 
@@ -34,9 +33,4 @@ export class ProblemOrderByWithRelationInput {
     nullable: true
   })
   creator?: CreatorOrderByWithRelationInput | undefined;
-
-  @TypeGraphQL.Field(_type => ProblemOrderByRelevanceInput, {
-    nullable: true
-  })
-  _relevance?: ProblemOrderByRelevanceInput | undefined;
 }

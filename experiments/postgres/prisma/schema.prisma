@@ -1,13 +1,11 @@
 datasource postgres {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider        = "prisma-client"
   // binaryTargets   = ["windows", "debian-openssl-1.1.x"]
   output          = "../prisma/generated/client"
-  previewFeatures = ["fullTextSearch"]
 }
 
 generator typegraphql {
