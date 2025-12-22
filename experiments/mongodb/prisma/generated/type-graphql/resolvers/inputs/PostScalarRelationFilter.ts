@@ -4,8 +4,8 @@ import { Prisma } from "../../../client";
 import { DecimalJSScalar } from "../../scalars";
 import { PostWhereInput } from "../inputs/PostWhereInput";
 
-@TypeGraphQL.InputType("PostRelationFilter", {})
-export class PostRelationFilter {
+@TypeGraphQL.InputType("PostScalarRelationFilter", {})
+export class PostScalarRelationFilter {
   @TypeGraphQL.Field(_type => PostWhereInput, {
     nullable: true
   })
