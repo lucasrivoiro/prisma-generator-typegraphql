@@ -507,7 +507,7 @@ export class FirstModelCount {
     name: \\"secondModelsField\\",
     nullable: false
   })
-  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args() args: FirstModelCountSecondModelsFieldArgs): number {
+  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args(() => FirstModelCountSecondModelsFieldArgs) args: FirstModelCountSecondModelsFieldArgs): number {
     return root.secondModelsField;
   }
 }
@@ -554,7 +554,7 @@ export class FirstModelCount {
     name: \\"secondModelsField\\",
     nullable: false
   })
-  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args() args: FirstModelCountSecondModelsFieldArgs): number {
+  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args(() => FirstModelCountSecondModelsFieldArgs) args: FirstModelCountSecondModelsFieldArgs): number {
     return root.secondModelsField;
   }
 }
@@ -956,7 +956,7 @@ export class FirstModelCount {
     name: \\"secondModelsField\\",
     nullable: false
   })
-  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args() args: FirstModelCountSecondModelsFieldArgs): number {
+  getSecondModelsField(@TypeGraphQL.Root() root: FirstModelCount, @TypeGraphQL.Args(() => FirstModelCountSecondModelsFieldArgs) args: FirstModelCountSecondModelsFieldArgs): number {
     return root.secondModelsField;
   }
 }

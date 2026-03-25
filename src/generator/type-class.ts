@@ -150,7 +150,7 @@ export function generateOutputTypeClassFromType(
           {
             name: "args",
             type: field.argsTypeName,
-            decorators: [{ name: "TypeGraphQL.Args", arguments: [] }],
+            decorators: [{ name: "TypeGraphQL.Args", arguments: [`() => ${field.argsTypeName}`] }],
           },
         ],
         statements: [Writers.returnStatement(`root.${field.name}`)],
