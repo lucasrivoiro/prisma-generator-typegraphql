@@ -371,6 +371,49 @@ export class DirectorRelationsResolver {
 "
 `;
 
+exports[`relations resolvers generation should properly generate relation resolver class for self-referential model: CategoryRelationsResolver 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import type { GraphQLResolveInfo } from \\"graphql\\";
+import { Category } from \\"../../../models/Category\\";
+import { CategoryChildrenArgs } from \\"./args/CategoryChildrenArgs\\";
+import { CategoryParentArgs } from \\"./args/CategoryParentArgs\\";
+import { transformInfoIntoPrismaArgs, getPrismaFromContext, transformCountFieldIntoSelectRelationsCount } from \\"../../../helpers\\";
+
+@TypeGraphQL.Resolver(_of => Category)
+export class CategoryRelationsResolver {
+  @TypeGraphQL.FieldResolver(_type => Category, {
+    nullable: true
+  })
+  async parent(@TypeGraphQL.Root() category: Category, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CategoryParentArgs): Promise<Category | null> {
+    const { _count } = transformInfoIntoPrismaArgs(info);
+    return getPrismaFromContext(ctx).category.findUniqueOrThrow({
+      where: {
+        id: category.id,
+      },
+    }).parent({
+      ...args,
+      ...(_count && transformCountFieldIntoSelectRelationsCount(_count)),
+    });
+  }
+
+  @TypeGraphQL.FieldResolver(_type => [Category], {
+    nullable: false
+  })
+  async children(@TypeGraphQL.Root() category: Category, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CategoryChildrenArgs): Promise<Category[]> {
+    const { _count } = transformInfoIntoPrismaArgs(info);
+    return getPrismaFromContext(ctx).category.findUniqueOrThrow({
+      where: {
+        id: category.id,
+      },
+    }).children({
+      ...args,
+      ...(_count && transformCountFieldIntoSelectRelationsCount(_count)),
+    });
+  }
+}
+"
+`;
+
 exports[`relations resolvers generation should properly generate relation resolvers classes for models with omitted relation field: PostRelationsResolver 1`] = `
 "import * as TypeGraphQL from \\"type-graphql\\";
 import type { GraphQLResolveInfo } from \\"graphql\\";

@@ -513,4 +513,25 @@ describe("relations resolvers generation", () => {
       );
     });
   });
+
+  it("should properly generate relation resolver class for self-referential model", async () => {
+    const schema = /* prisma */ `
+      model Category {
+        id          Int        @id @default(autoincrement())
+        name        String
+        parent_id   Int?
+        parent      Category?  @relation("CategoryToParent", fields: [parent_id], references: [id])
+        children    Category[] @relation("CategoryToParent")
+      }
+    `;
+
+    await generateCodeFromSchema(schema, { outputDirPath });
+    const categoryRelationsResolverTSFile = await readGeneratedFile(
+      "/resolvers/relations/Category/CategoryRelationsResolver.ts",
+    );
+
+    expect(categoryRelationsResolverTSFile).toMatchSnapshot(
+      "CategoryRelationsResolver",
+    );
+  });
 });
