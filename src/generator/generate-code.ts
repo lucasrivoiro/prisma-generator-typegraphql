@@ -1,6 +1,7 @@
 import type { DMMF as PrismaDMMF } from "@prisma/generator-helper";
 import { Project, ScriptTarget, ModuleKind, CompilerOptions } from "ts-morph";
 import path from "path";
+import { existsSync } from "fs";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 const execa = promisify(exec);
@@ -52,6 +53,20 @@ import { generateHelpersFile } from "./generate-helpers";
 import { DMMF } from "./dmmf/types";
 import { getBlocksToEmit } from "./emit-block";
 
+/**
+ * Prisma 7+ generates `client.ts` as the entry point instead of `index.ts`.
+ * This function resolves the correct entry path so TypeScript can find the module.
+ */
+function resolvePrismaClientEntryPath(clientPath: string): string {
+  const hasIndex = ["index.ts", "index.d.ts", "index.js"].some(f =>
+    existsSync(path.join(clientPath, f)),
+  );
+  if (!hasIndex && existsSync(path.join(clientPath, "client.ts"))) {
+    return path.join(clientPath, "client");
+  }
+  return clientPath;
+}
+
 const baseCompilerOptions: CompilerOptions = {
   target: ScriptTarget.ES2021,
   module: ModuleKind.CommonJS,
@@ -73,7 +88,10 @@ export default async function generateCode(
     blocksToEmit: getBlocksToEmit(baseOptions.emitOnly),
     contextPrismaKey: baseOptions.contextPrismaKey ?? "prisma",
     relativePrismaOutputPath: toUnixPath(
-      path.relative(baseOptions.outputDirPath, baseOptions.prismaClientPath),
+      path.relative(
+        baseOptions.outputDirPath,
+        resolvePrismaClientEntryPath(baseOptions.prismaClientPath),
+      ),
     ),
     absolutePrismaOutputPath:
       !baseOptions.customPrismaImportPath &&
