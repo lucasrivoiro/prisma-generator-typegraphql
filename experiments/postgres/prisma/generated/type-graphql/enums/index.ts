@@ -1,4 +1,5 @@
 export { CategoryScalarFieldEnum } from "./CategoryScalarFieldEnum";
+export { CompanyScalarFieldEnum } from "./CompanyScalarFieldEnum";
 export { CreatorScalarFieldEnum } from "./CreatorScalarFieldEnum";
 export { DirectorScalarFieldEnum } from "./DirectorScalarFieldEnum";
 export { EquipmentScalarFieldEnum } from "./EquipmentScalarFieldEnum";

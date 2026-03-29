@@ -73,3 +73,8 @@ export type Equipment = Prisma.EquipmentModel
  * @@TypeGraphQL.omit(output: true)
  */
 export type Hidden = Prisma.HiddenModel
+/**
+ * Model Company
+ * 
+ */
+export type Company = Prisma.CompanyModel

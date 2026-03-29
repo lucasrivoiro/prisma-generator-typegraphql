@@ -1,4 +1,5 @@
 export { Category } from "./Category";
+export { Company } from "./Company";
 export { Creator } from "./Creator";
 export { Director } from "./Director";
 export { Equipment } from "./Equipment";

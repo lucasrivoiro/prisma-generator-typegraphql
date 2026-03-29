@@ -1,3 +1,4 @@
+export { CompanyRelationsResolver } from "./Company/CompanyRelationsResolver";
 export { CreatorRelationsResolver } from "./Creator/CreatorRelationsResolver";
 export { DirectorRelationsResolver } from "./Director/DirectorRelationsResolver";
 export { MainUserRelationsResolver } from "./MainUser/MainUserRelationsResolver";

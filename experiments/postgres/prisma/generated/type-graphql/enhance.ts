@@ -21,7 +21,8 @@ const crudResolversMap = {
   Creator: crudResolvers.CreatorCrudResolver,
   NativeTypeModel: crudResolvers.NativeTypeModelCrudResolver,
   Equipment: crudResolvers.EquipmentCrudResolver,
-  Hidden: crudResolvers.HiddenCrudResolver
+  Hidden: crudResolvers.HiddenCrudResolver,
+  Company: crudResolvers.CompanyCrudResolver
 };
 const actionResolversMap = {
   MainUser: {
@@ -210,6 +211,23 @@ const actionResolversMap = {
     updateManyHidden: actionResolvers.UpdateManyHiddenResolver,
     updateOneHidden: actionResolvers.UpdateOneHiddenResolver,
     upsertOneHidden: actionResolvers.UpsertOneHiddenResolver
+  },
+  Company: {
+    aggregateCompany: actionResolvers.AggregateCompanyResolver,
+    createManyCompany: actionResolvers.CreateManyCompanyResolver,
+    createManyAndReturnCompany: actionResolvers.CreateManyAndReturnCompanyResolver,
+    createOneCompany: actionResolvers.CreateOneCompanyResolver,
+    deleteManyCompany: actionResolvers.DeleteManyCompanyResolver,
+    deleteOneCompany: actionResolvers.DeleteOneCompanyResolver,
+    findFirstCompany: actionResolvers.FindFirstCompanyResolver,
+    findFirstCompanyOrThrow: actionResolvers.FindFirstCompanyOrThrowResolver,
+    companies: actionResolvers.FindManyCompanyResolver,
+    company: actionResolvers.FindUniqueCompanyResolver,
+    getCompany: actionResolvers.FindUniqueCompanyOrThrowResolver,
+    groupByCompany: actionResolvers.GroupByCompanyResolver,
+    updateManyCompany: actionResolvers.UpdateManyCompanyResolver,
+    updateOneCompany: actionResolvers.UpdateOneCompanyResolver,
+    upsertOneCompany: actionResolvers.UpsertOneCompanyResolver
   }
 };
 const crudResolversInfo = {
@@ -223,7 +241,8 @@ const crudResolversInfo = {
   Creator: ["aggregateCreator", "createManyCreator", "createManyAndReturnCreator", "createOneCreator", "deleteManyCreator", "deleteOneCreator", "findFirstCreator", "findFirstCreatorOrThrow", "creators", "creator", "getCreator", "groupByCreator", "updateManyCreator", "updateOneCreator", "upsertOneCreator"],
   NativeTypeModel: ["aggregateNativeTypeModel", "createManyNativeTypeModel", "createManyAndReturnNativeTypeModel", "createOneNativeTypeModel", "deleteManyNativeTypeModel", "deleteOneNativeTypeModel", "findFirstNativeTypeModel", "findFirstNativeTypeModelOrThrow", "nativeTypeModels", "nativeTypeModel", "getNativeTypeModel", "groupByNativeTypeModel", "updateManyNativeTypeModel", "updateOneNativeTypeModel", "upsertOneNativeTypeModel"],
   Equipment: ["aggregateEquipment", "createManyEquipment", "createManyAndReturnEquipment", "createOneEquipment", "deleteManyEquipment", "deleteOneEquipment", "findFirstEquipment", "findFirstEquipmentOrThrow", "equipments", "equipment", "getEquipment", "groupByEquipment", "updateManyEquipment", "updateOneEquipment", "upsertOneEquipment"],
-  Hidden: ["aggregateHidden", "createManyHidden", "createManyAndReturnHidden", "createOneHidden", "deleteManyHidden", "deleteOneHidden", "findFirstHidden", "findFirstHiddenOrThrow", "hiddens", "hidden", "getHidden", "groupByHidden", "updateManyHidden", "updateOneHidden", "upsertOneHidden"]
+  Hidden: ["aggregateHidden", "createManyHidden", "createManyAndReturnHidden", "createOneHidden", "deleteManyHidden", "deleteOneHidden", "findFirstHidden", "findFirstHiddenOrThrow", "hiddens", "hidden", "getHidden", "groupByHidden", "updateManyHidden", "updateOneHidden", "upsertOneHidden"],
+  Company: ["aggregateCompany", "createManyCompany", "createManyAndReturnCompany", "createOneCompany", "deleteManyCompany", "deleteOneCompany", "findFirstCompany", "findFirstCompanyOrThrow", "companies", "company", "getCompany", "groupByCompany", "updateManyCompany", "updateOneCompany", "upsertOneCompany"]
 };
 const argsInfo = {
   AggregateMainUserArgs: ["where", "orderBy", "cursor", "take", "skip"],
@@ -390,7 +409,22 @@ const argsInfo = {
   GroupByHiddenArgs: ["where", "orderBy", "by", "having", "take", "skip"],
   UpdateManyHiddenArgs: ["data", "where", "limit"],
   UpdateOneHiddenArgs: ["data", "where"],
-  UpsertOneHiddenArgs: ["where", "create", "update"]
+  UpsertOneHiddenArgs: ["where", "create", "update"],
+  AggregateCompanyArgs: ["where", "orderBy", "cursor", "take", "skip"],
+  CreateManyCompanyArgs: ["data", "skipDuplicates"],
+  CreateManyAndReturnCompanyArgs: ["data", "skipDuplicates"],
+  CreateOneCompanyArgs: ["data"],
+  DeleteManyCompanyArgs: ["where", "limit"],
+  DeleteOneCompanyArgs: ["where"],
+  FindFirstCompanyArgs: ["where", "orderBy", "cursor", "take", "skip", "distinct"],
+  FindFirstCompanyOrThrowArgs: ["where", "orderBy", "cursor", "take", "skip", "distinct"],
+  FindManyCompanyArgs: ["where", "orderBy", "cursor", "take", "skip", "distinct"],
+  FindUniqueCompanyArgs: ["where"],
+  FindUniqueCompanyOrThrowArgs: ["where"],
+  GroupByCompanyArgs: ["where", "orderBy", "by", "having", "take", "skip"],
+  UpdateManyCompanyArgs: ["data", "where", "limit"],
+  UpdateOneCompanyArgs: ["data", "where"],
+  UpsertOneCompanyArgs: ["where", "create", "update"]
 };
 
 type ResolverModelNames = keyof typeof crudResolversMap;
@@ -493,7 +527,8 @@ const relationResolversMap = {
   Movie: relationResolvers.MovieRelationsResolver,
   Director: relationResolvers.DirectorRelationsResolver,
   Problem: relationResolvers.ProblemRelationsResolver,
-  Creator: relationResolvers.CreatorRelationsResolver
+  Creator: relationResolvers.CreatorRelationsResolver,
+  Company: relationResolvers.CompanyRelationsResolver
 };
 const relationResolversInfo = {
   MainUser: ["posts"],
@@ -501,7 +536,8 @@ const relationResolversInfo = {
   Movie: ["director"],
   Director: ["movies"],
   Problem: ["likedBy", "creator"],
-  Creator: ["likes", "problems"]
+  Creator: ["likes", "problems"],
+  Company: ["parent", "subsidiaries"]
 };
 
 type RelationResolverModelNames = keyof typeof relationResolversMap;
@@ -593,7 +629,8 @@ const modelsInfo = {
   Creator: ["id", "name"],
   NativeTypeModel: ["id", "bigInt", "byteA", "decimal"],
   Equipment: ["id", "name"],
-  Hidden: ["id", "name"]
+  Hidden: ["id", "name"],
+  Company: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"]
 };
 
 type ModelNames = keyof typeof models;
@@ -654,6 +691,8 @@ const outputsInfo = {
   EquipmentGroupBy: ["id", "name", "_count", "_min", "_max"],
   AggregateHidden: ["_count", "_min", "_max"],
   HiddenGroupBy: ["id", "name", "_count", "_min", "_max"],
+  AggregateCompany: ["_count", "_min", "_max"],
+  CompanyGroupBy: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "_count", "_min", "_max"],
   AffectedRowsOutput: ["count"],
   MainUserCount: ["posts", "editorPosts"],
   MainUserCountAggregate: ["id", "email", "name", "age", "balance", "amount", "role", "grades", "aliases", "_all"],
@@ -704,6 +743,10 @@ const outputsInfo = {
   HiddenCountAggregate: ["id", "name", "_all"],
   HiddenMinAggregate: ["id", "name"],
   HiddenMaxAggregate: ["id", "name"],
+  CompanyCount: ["subsidiaries"],
+  CompanyCountAggregate: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "_all"],
+  CompanyMinAggregate: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  CompanyMaxAggregate: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
   CreateManyAndReturnMainUser: ["id", "email", "name", "age", "balance", "amount", "role", "grades", "aliases"],
   UpdateManyUserAndReturnOutputType: ["id", "email", "name", "age", "balance", "amount", "role", "grades", "aliases"],
   CreateManyAndReturnPost: ["uuid", "createdAt", "updatedAt", "published", "title", "subtitle", "content", "authorId", "editorId", "kind", "metadata", "author", "editor"],
@@ -725,7 +768,9 @@ const outputsInfo = {
   CreateManyAndReturnEquipment: ["id", "name"],
   UpdateManyEquipmentAndReturnOutputType: ["id", "name"],
   CreateManyAndReturnHidden: ["id", "name"],
-  UpdateManyHiddenAndReturnOutputType: ["id", "name"]
+  UpdateManyHiddenAndReturnOutputType: ["id", "name"],
+  CreateManyAndReturnCompany: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent"],
+  UpdateManyCompanyAndReturnOutputType: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent"]
 };
 
 type OutputTypesNames = keyof typeof outputTypes;
@@ -821,6 +866,11 @@ const inputsInfo = {
   HiddenWhereUniqueInput: ["id", "AND", "OR", "NOT", "name"],
   HiddenOrderByWithAggregationInput: ["id", "name", "_count", "_max", "_min"],
   HiddenScalarWhereWithAggregatesInput: ["AND", "OR", "NOT", "id", "name"],
+  CompanyWhereInput: ["AND", "OR", "NOT", "id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent", "subsidiaries"],
+  CompanyOrderByWithRelationInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent", "subsidiaries"],
+  CompanyWhereUniqueInput: ["id", "slug", "AND", "OR", "NOT", "parent_id", "name", "description", "founding_date", "logo", "featured", "deleted", "created_at", "updated_at", "parent", "subsidiaries"],
+  CompanyOrderByWithAggregationInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "_count", "_max", "_min"],
+  CompanyScalarWhereWithAggregatesInput: ["AND", "OR", "NOT", "id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
   MainUserCreateInput: ["email", "firstName", "age", "accountBalance", "amount", "role", "grades", "aliases", "clientPosts", "editorPosts"],
   MainUserUpdateInput: ["email", "firstName", "age", "accountBalance", "amount", "role", "grades", "aliases", "clientPosts", "editorPosts"],
   MainUserCreateManyInput: ["id", "email", "firstName", "age", "accountBalance", "amount", "role", "grades", "aliases"],
@@ -865,6 +915,10 @@ const inputsInfo = {
   HiddenUpdateInput: ["id", "name"],
   HiddenCreateManyInput: ["id", "name"],
   HiddenUpdateManyMutationInput: ["id", "name"],
+  CompanyCreateInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent", "subsidiaries"],
+  CompanyUpdateInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent", "subsidiaries"],
+  CompanyCreateManyInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  CompanyUpdateManyMutationInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
   IntFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
   StringFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "mode", "not"],
   StringNullableFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "mode", "not"],
@@ -955,6 +1009,16 @@ const inputsInfo = {
   HiddenCountOrderByAggregateInput: ["id", "name"],
   HiddenMaxOrderByAggregateInput: ["id", "name"],
   HiddenMinOrderByAggregateInput: ["id", "name"],
+  UuidFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "mode", "not"],
+  UuidNullableFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "mode", "not"],
+  CompanyNullableScalarRelationFilter: ["is", "isNot"],
+  CompanyListRelationFilter: ["every", "some", "none"],
+  CompanyOrderByRelationAggregateInput: ["_count"],
+  CompanyCountOrderByAggregateInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  CompanyMaxOrderByAggregateInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  CompanyMinOrderByAggregateInput: ["id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  UuidWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "mode", "not", "_count", "_min", "_max"],
+  UuidNullableWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "mode", "not", "_count", "_min", "_max"],
   MainUserCreategradesInput: ["set"],
   MainUserCreatealiasesInput: ["set"],
   PostCreateNestedManyWithoutAuthorInput: ["create", "connectOrCreate", "createMany", "connect"],
@@ -991,6 +1055,10 @@ const inputsInfo = {
   NullableBigIntFieldUpdateOperationsInput: ["set", "increment", "decrement", "multiply", "divide"],
   NullableBytesFieldUpdateOperationsInput: ["set"],
   NullableDecimalFieldUpdateOperationsInput: ["set", "increment", "decrement", "multiply", "divide"],
+  CompanyCreateNestedOneWithoutSubsidiariesInput: ["create", "connectOrCreate", "connect"],
+  CompanyCreateNestedManyWithoutParentInput: ["create", "connectOrCreate", "createMany", "connect"],
+  CompanyUpdateOneWithoutSubsidiariesNestedInput: ["create", "connectOrCreate", "upsert", "disconnect", "delete", "connect", "update"],
+  CompanyUpdateManyWithoutParentNestedInput: ["create", "connectOrCreate", "upsert", "createMany", "set", "disconnect", "delete", "connect", "update", "updateMany", "deleteMany"],
   NestedIntFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
   NestedStringFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "not"],
   NestedStringNullableFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "not"],
@@ -1017,6 +1085,10 @@ const inputsInfo = {
   NestedBigIntNullableWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_avg", "_sum", "_min", "_max"],
   NestedBytesNullableWithAggregatesFilter: ["equals", "in", "notIn", "not", "_count", "_min", "_max"],
   NestedDecimalNullableWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_avg", "_sum", "_min", "_max"],
+  NestedUuidFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
+  NestedUuidNullableFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
+  NestedUuidWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_min", "_max"],
+  NestedUuidNullableWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_min", "_max"],
   PostCreateWithoutAuthorInput: ["uuid", "createdAt", "updatedAt", "isPublished", "title", "subtitle", "content", "kind", "metadata", "editor"],
   PostCreateOrConnectWithoutAuthorInput: ["where", "create"],
   PostCreateManyAuthorInputEnvelope: ["data", "skipDuplicates"],
@@ -1075,6 +1147,18 @@ const inputsInfo = {
   ProblemUpsertWithWhereUniqueWithoutCreatorInput: ["where", "update", "create"],
   ProblemUpdateWithWhereUniqueWithoutCreatorInput: ["where", "data"],
   ProblemUpdateManyWithWhereWithoutCreatorInput: ["where", "data"],
+  CompanyCreateWithoutSubsidiariesInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent"],
+  CompanyCreateOrConnectWithoutSubsidiariesInput: ["where", "create"],
+  CompanyCreateWithoutParentInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "subsidiaries"],
+  CompanyCreateOrConnectWithoutParentInput: ["where", "create"],
+  CompanyCreateManyParentInputEnvelope: ["data", "skipDuplicates"],
+  CompanyUpsertWithoutSubsidiariesInput: ["update", "create", "where"],
+  CompanyUpdateToOneWithWhereWithoutSubsidiariesInput: ["where", "data"],
+  CompanyUpdateWithoutSubsidiariesInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "parent"],
+  CompanyUpsertWithWhereUniqueWithoutParentInput: ["where", "update", "create"],
+  CompanyUpdateWithWhereUniqueWithoutParentInput: ["where", "data"],
+  CompanyUpdateManyWithWhereWithoutParentInput: ["where", "data"],
+  CompanyScalarWhereInput: ["AND", "OR", "NOT", "id", "parent_id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
   PostCreateManyAuthorInput: ["uuid", "createdAt", "updatedAt", "isPublished", "title", "subtitle", "content", "editorId", "kind", "metadata"],
   PostCreateManyEditorInput: ["uuid", "createdAt", "updatedAt", "isPublished", "title", "subtitle", "content", "authorId", "kind", "metadata"],
   PostUpdateWithoutAuthorInput: ["uuid", "createdAt", "updatedAt", "isPublished", "title", "subtitle", "content", "kind", "metadata", "editor"],
@@ -1084,7 +1168,9 @@ const inputsInfo = {
   CreatorUpdateWithoutLikesInput: ["name", "problems"],
   ProblemCreateManyCreatorInput: ["id", "problemText"],
   ProblemUpdateWithoutLikedByInput: ["problemText", "creator"],
-  ProblemUpdateWithoutCreatorInput: ["problemText", "likedBy"]
+  ProblemUpdateWithoutCreatorInput: ["problemText", "likedBy"],
+  CompanyCreateManyParentInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at"],
+  CompanyUpdateWithoutParentInput: ["id", "name", "description", "founding_date", "slug", "logo", "featured", "deleted", "created_at", "updated_at", "subsidiaries"]
 };
 
 type InputTypesNames = keyof typeof inputTypes;

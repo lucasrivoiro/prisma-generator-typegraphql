@@ -1,4 +1,5 @@
 export * from "./Category/args";
+export * from "./Company/args";
 export * from "./Creator/args";
 export * from "./Director/args";
 export * from "./Equipment/args";

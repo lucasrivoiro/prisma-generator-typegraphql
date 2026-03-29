@@ -61,6 +61,8 @@ import {
   applyRelationResolversEnhanceMap,
   RelationResolverActionsConfig,
   HiddenCrudResolver,
+  CompanyCrudResolver,
+  CompanyRelationsResolver,
 } from "./prisma/generated/type-graphql";
 import * as Prisma from "./prisma/generated/client/client";
 import { ProblemCrudResolver } from "./prisma/generated/type-graphql/resolvers/crud/Problem/ProblemCrudResolver";
@@ -130,7 +132,6 @@ applyArgsTypesEnhanceMap({
   },
   FindManyDirectorArgs: {
     fields: {
-      _all: [IsDefined()],
       cursor: () => [IsDefined()],
     },
   },
@@ -287,6 +288,8 @@ async function main() {
       GroupByPostResolver,
       NativeTypeModelCrudResolver,
       HiddenCrudResolver,
+      CompanyCrudResolver,
+      CompanyRelationsResolver,
     ],
     validate: { forbidUnknownValues: false },
     emitSchemaFile: path.resolve(__dirname, "./generated-schema.graphql"),

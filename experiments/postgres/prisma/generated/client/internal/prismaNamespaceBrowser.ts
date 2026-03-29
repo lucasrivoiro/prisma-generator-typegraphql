@@ -61,7 +61,8 @@ export const ModelName = {
   Creator: 'Creator',
   NativeTypeModel: 'NativeTypeModel',
   Equipment: 'Equipment',
-  Hidden: 'Hidden'
+  Hidden: 'Hidden',
+  Company: 'Company'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -188,6 +189,23 @@ export const HiddenScalarFieldEnum = {
 } as const
 
 export type HiddenScalarFieldEnum = (typeof HiddenScalarFieldEnum)[keyof typeof HiddenScalarFieldEnum]
+
+
+export const CompanyScalarFieldEnum = {
+  id: 'id',
+  parent_id: 'parent_id',
+  name: 'name',
+  description: 'description',
+  founding_date: 'founding_date',
+  slug: 'slug',
+  logo: 'logo',
+  featured: 'featured',
+  deleted: 'deleted',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
 
 
 export const SortOrder = {

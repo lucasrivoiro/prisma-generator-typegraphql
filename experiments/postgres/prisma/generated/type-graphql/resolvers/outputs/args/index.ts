@@ -1,3 +1,5 @@
+export { CompanyCountSubsidiariesArgs } from "./CompanyCountSubsidiariesArgs";
+export { CreateManyAndReturnCompanyParentArgs } from "./CreateManyAndReturnCompanyParentArgs";
 export { CreateManyAndReturnPostEditorArgs } from "./CreateManyAndReturnPostEditorArgs";
 export { CreateManyAndReturnProblemCreatorArgs } from "./CreateManyAndReturnProblemCreatorArgs";
 export { CreatorCountLikesArgs } from "./CreatorCountLikesArgs";
@@ -6,5 +8,6 @@ export { DirectorCountMoviesArgs } from "./DirectorCountMoviesArgs";
 export { MainUserCountEditorPostsArgs } from "./MainUserCountEditorPostsArgs";
 export { MainUserCountPostsArgs } from "./MainUserCountPostsArgs";
 export { ProblemCountLikedByArgs } from "./ProblemCountLikedByArgs";
+export { UpdateManyCompanyAndReturnOutputTypeParentArgs } from "./UpdateManyCompanyAndReturnOutputTypeParentArgs";
 export { UpdateManyProblemAndReturnOutputTypeCreatorArgs } from "./UpdateManyProblemAndReturnOutputTypeCreatorArgs";
 export { UpdateManypostAndReturnOutputTypeEditorArgs } from "./UpdateManypostAndReturnOutputTypeEditorArgs";

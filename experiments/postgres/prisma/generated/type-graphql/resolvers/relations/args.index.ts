@@ -1,3 +1,4 @@
+export * from "./Company/args";
 export * from "./Creator/args";
 export * from "./Director/args";
 export * from "./MainUser/args";

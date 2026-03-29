@@ -18,6 +18,9 @@ async function main() {
   await prisma.director.deleteMany({});
   await prisma.movie.deleteMany({});
   await prisma.nativeTypeModel.deleteMany({});
+  // delete subsidiaries before parents to respect FK constraint
+  await prisma.company.deleteMany({ where: { parent_id: { not: null } } });
+  await prisma.company.deleteMany({});
 
   await prisma.user.create({
     data: {
@@ -167,6 +170,37 @@ async function main() {
       bigInt: BigInt("123456789123456789"),
       decimal: new Prisma.Decimal(21.37),
       byteA: new Uint8Array([4, 8, 15, 16, 23, 42]),
+    },
+  });
+
+  const acme = await prisma.company.create({
+    data: {
+      name: "Acme Corporation",
+      description: "The leading provider of everything",
+      founding_date: new Date("1990-01-15"),
+      slug: "acme-corporation",
+      featured: true,
+    },
+  });
+
+  await prisma.company.create({
+    data: {
+      name: "Acme Labs",
+      description: "Research and development division",
+      founding_date: new Date("2005-06-01"),
+      slug: "acme-labs",
+      parent_id: acme.id,
+    },
+  });
+
+  await prisma.company.create({
+    data: {
+      name: "Acme Retail",
+      description: "Consumer products division",
+      founding_date: new Date("2010-03-20"),
+      slug: "acme-retail",
+      featured: true,
+      parent_id: acme.id,
     },
   });
 

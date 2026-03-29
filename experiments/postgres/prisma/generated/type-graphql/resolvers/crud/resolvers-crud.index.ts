@@ -1,4 +1,5 @@
 export { CategoryCrudResolver } from "./Category/CategoryCrudResolver";
+export { CompanyCrudResolver } from "./Company/CompanyCrudResolver";
 export { CreatorCrudResolver } from "./Creator/CreatorCrudResolver";
 export { DirectorCrudResolver } from "./Director/DirectorCrudResolver";
 export { EquipmentCrudResolver } from "./Equipment/EquipmentCrudResolver";
