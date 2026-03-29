@@ -14,7 +14,7 @@ export class MainUserCount {
     name: "posts",
     nullable: false
   })
-  getPosts(@TypeGraphQL.Root() root: MainUserCount, @TypeGraphQL.Args() args: MainUserCountPostsArgs): number {
+  getPosts(@TypeGraphQL.Root() root: MainUserCount, @TypeGraphQL.Args(() => MainUserCountPostsArgs) args: MainUserCountPostsArgs): number {
     return root.posts;
   }
 
@@ -22,7 +22,7 @@ export class MainUserCount {
     name: "editorPosts",
     nullable: false
   })
-  getEditorPosts(@TypeGraphQL.Root() root: MainUserCount, @TypeGraphQL.Args() args: MainUserCountEditorPostsArgs): number {
+  getEditorPosts(@TypeGraphQL.Root() root: MainUserCount, @TypeGraphQL.Args(() => MainUserCountEditorPostsArgs) args: MainUserCountEditorPostsArgs): number {
     return root.editorPosts;
   }
 }

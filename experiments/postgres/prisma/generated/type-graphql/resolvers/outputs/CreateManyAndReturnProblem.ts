@@ -28,7 +28,7 @@ export class CreateManyAndReturnProblem {
     name: "creator",
     nullable: true
   })
-  getCreator(@TypeGraphQL.Root() root: CreateManyAndReturnProblem, @TypeGraphQL.Args() args: CreateManyAndReturnProblemCreatorArgs): Creator | null {
+  getCreator(@TypeGraphQL.Root() root: CreateManyAndReturnProblem, @TypeGraphQL.Args(() => CreateManyAndReturnProblemCreatorArgs) args: CreateManyAndReturnProblemCreatorArgs): Creator | null {
     return root.creator;
   }
 }

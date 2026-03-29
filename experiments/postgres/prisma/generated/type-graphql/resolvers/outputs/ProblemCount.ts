@@ -12,7 +12,7 @@ export class ProblemCount {
     name: "likedBy",
     nullable: false
   })
-  getLikedBy(@TypeGraphQL.Root() root: ProblemCount, @TypeGraphQL.Args() args: ProblemCountLikedByArgs): number {
+  getLikedBy(@TypeGraphQL.Root() root: ProblemCount, @TypeGraphQL.Args(() => ProblemCountLikedByArgs) args: ProblemCountLikedByArgs): number {
     return root.likedBy;
   }
 }

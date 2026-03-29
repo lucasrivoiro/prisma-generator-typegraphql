@@ -14,7 +14,7 @@ export class CreatorCount {
     name: "likes",
     nullable: false
   })
-  getLikes(@TypeGraphQL.Root() root: CreatorCount, @TypeGraphQL.Args() args: CreatorCountLikesArgs): number {
+  getLikes(@TypeGraphQL.Root() root: CreatorCount, @TypeGraphQL.Args(() => CreatorCountLikesArgs) args: CreatorCountLikesArgs): number {
     return root.likes;
   }
 
@@ -22,7 +22,7 @@ export class CreatorCount {
     name: "problems",
     nullable: false
   })
-  getProblems(@TypeGraphQL.Root() root: CreatorCount, @TypeGraphQL.Args() args: CreatorCountProblemsArgs): number {
+  getProblems(@TypeGraphQL.Root() root: CreatorCount, @TypeGraphQL.Args(() => CreatorCountProblemsArgs) args: CreatorCountProblemsArgs): number {
     return root.problems;
   }
 }

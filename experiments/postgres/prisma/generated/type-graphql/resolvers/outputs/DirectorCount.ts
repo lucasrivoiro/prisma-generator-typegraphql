@@ -12,7 +12,7 @@ export class DirectorCount {
     name: "movies",
     nullable: false
   })
-  getMovies(@TypeGraphQL.Root() root: DirectorCount, @TypeGraphQL.Args() args: DirectorCountMoviesArgs): number {
+  getMovies(@TypeGraphQL.Root() root: DirectorCount, @TypeGraphQL.Args(() => DirectorCountMoviesArgs) args: DirectorCountMoviesArgs): number {
     return root.movies;
   }
 }

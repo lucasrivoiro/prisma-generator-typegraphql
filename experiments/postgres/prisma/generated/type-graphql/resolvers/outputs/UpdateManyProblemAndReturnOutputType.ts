@@ -28,7 +28,7 @@ export class UpdateManyProblemAndReturnOutputType {
     name: "creator",
     nullable: true
   })
-  getCreator(@TypeGraphQL.Root() root: UpdateManyProblemAndReturnOutputType, @TypeGraphQL.Args() args: UpdateManyProblemAndReturnOutputTypeCreatorArgs): Creator | null {
+  getCreator(@TypeGraphQL.Root() root: UpdateManyProblemAndReturnOutputType, @TypeGraphQL.Args(() => UpdateManyProblemAndReturnOutputTypeCreatorArgs) args: UpdateManyProblemAndReturnOutputTypeCreatorArgs): Creator | null {
     return root.creator;
   }
 }

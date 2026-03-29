@@ -870,6 +870,11 @@ export type HiddenFindManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Skip the first `n` Hiddens.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Hiddens.
+   */
   distinct?: Prisma.HiddenScalarFieldEnum | Prisma.HiddenScalarFieldEnum[]
 }
 

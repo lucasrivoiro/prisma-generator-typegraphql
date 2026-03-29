@@ -74,7 +74,7 @@ export class UpdateManypostAndReturnOutputType {
     name: "editor",
     nullable: true
   })
-  getEditor(@TypeGraphQL.Root() root: UpdateManypostAndReturnOutputType, @TypeGraphQL.Args() args: UpdateManypostAndReturnOutputTypeEditorArgs): MainUser | null {
+  getEditor(@TypeGraphQL.Root() root: UpdateManypostAndReturnOutputType, @TypeGraphQL.Args(() => UpdateManypostAndReturnOutputTypeEditorArgs) args: UpdateManypostAndReturnOutputTypeEditorArgs): MainUser | null {
     return root.editor;
   }
 }

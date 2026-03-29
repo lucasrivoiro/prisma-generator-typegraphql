@@ -74,7 +74,7 @@ export class CreateManyAndReturnPost {
     name: "editor",
     nullable: true
   })
-  getEditor(@TypeGraphQL.Root() root: CreateManyAndReturnPost, @TypeGraphQL.Args() args: CreateManyAndReturnPostEditorArgs): MainUser | null {
+  getEditor(@TypeGraphQL.Root() root: CreateManyAndReturnPost, @TypeGraphQL.Args(() => CreateManyAndReturnPostEditorArgs) args: CreateManyAndReturnPostEditorArgs): MainUser | null {
     return root.editor;
   }
 }

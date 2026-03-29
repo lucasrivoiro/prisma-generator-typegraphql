@@ -999,6 +999,11 @@ export type NativeTypeModelFindManyArgs<ExtArgs extends runtime.Types.Extensions
    * Skip the first `n` NativeTypeModels.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of NativeTypeModels.
+   */
   distinct?: Prisma.NativeTypeModelScalarFieldEnum | Prisma.NativeTypeModelScalarFieldEnum[]
 }
 

@@ -998,6 +998,11 @@ export type DirectorFindManyArgs<ExtArgs extends runtime.Types.Extensions.Intern
    * Skip the first `n` Directors.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Directors.
+   */
   distinct?: Prisma.DirectorScalarFieldEnum | Prisma.DirectorScalarFieldEnum[]
 }
 
