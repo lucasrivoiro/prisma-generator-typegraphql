@@ -16,10 +16,44 @@ This library now fully supports **Prisma 7**, including all breaking changes and
 
 | Library Version | Prisma Version | MongoDB Support |
 |-----------------|----------------|-----------------|
-| `1.0.0`         | Prisma 7.x     | ❌ Not yet       |
+| `1.0.x`         | Prisma 7.x     | ❌ Not yet       |
 | `0.1.0`         | Prisma 5.18.0+ / 6.x | ✅ Yes     |
 
-> ⚠️ **Important:** If you are using Prisma 5 or 6, install version `0.1.0`. Version `1.0.0` is only compatible with Prisma 7.
+> ⚠️ **Important:** If you are using Prisma 5 or 6, install version `0.1.0`. Version `1.0.x` is only compatible with Prisma 7.
+
+### Prisma 7 migration notes
+
+**Driver adapters are now required.** Prisma 7 removed the built-in query engine, so every `PrismaClient` must receive a driver adapter. Install the adapter for your database, for example:
+
+```bash
+npm install @prisma/adapter-pg pg
+```
+
+Then pass it when constructing the client:
+
+```ts
+import { PrismaClient } from "./prisma/generated/client/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
+```
+
+**Generated import path changed.** In Prisma 7 the entry point of the generated client is `client.ts` instead of `index.ts`. The generator handles this automatically, but if you set `customPrismaImportPath` in your schema you must append `/client`:
+
+```prisma
+generator typegraphql {
+  provider               = "typegraphql-prisma"
+  // Prisma 7: point to client.ts, not just the folder
+  customPrismaImportPath = "../generated/client/client"
+}
+```
+
+**Environment variables are not auto-loaded.** Prisma 7 no longer reads `.env` automatically. Add `import "dotenv/config"` at the top of any file that uses `PrismaClient` or call `dotenv.config()` before instantiating it.
+
+**Align `prisma` CLI and `@prisma/client` versions.** Always keep both packages on exactly the same version to avoid runtime errors at startup.
 
 Feel free to send PRs with improvements and new features. Let's keep this lib together!
 

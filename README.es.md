@@ -16,10 +16,44 @@ Esta biblioteca ahora soporta completamente **Prisma 7**, incluyendo todos los b
 
 | Versión de la Biblioteca | Versión de Prisma | Soporte MongoDB |
 |-------------------------|-------------------|-----------------|
-| `1.0.0`                 | Prisma 7.x        | ❌ Aún no        |
+| `1.0.x`                 | Prisma 7.x        | ❌ Aún no        |
 | `0.1.0`                 | Prisma 5.18.0+ / 6.x | ✅ Sí        |
 
-> ⚠️ **Importante:** Si estás usando Prisma 5 o 6, instala la versión `0.1.0`. La versión `1.0.0` solo es compatible con Prisma 7.
+> ⚠️ **Importante:** Si estás usando Prisma 5 o 6, instala la versión `0.1.0`. La versión `1.0.x` solo es compatible con Prisma 7.
+
+### Notas de migración para Prisma 7
+
+**Los driver adapters son obligatorios.** Prisma 7 eliminó el engine de consultas incorporado, por lo que cada `PrismaClient` debe recibir un driver adapter. Instala el adapter de tu base de datos, por ejemplo:
+
+```bash
+npm install @prisma/adapter-pg pg
+```
+
+Luego pasárselo al construir el client:
+
+```ts
+import { PrismaClient } from "./prisma/generated/client/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
+```
+
+**La ruta de importación generada cambió.** En Prisma 7, el entry point del client generado es `client.ts` en lugar de `index.ts`. El generador maneja esto automáticamente, pero si defines `customPrismaImportPath` en tu schema debes agregar `/client` al final:
+
+```prisma
+generator typegraphql {
+  provider               = "typegraphql-prisma"
+  // Prisma 7: apunta a client.ts, no solo a la carpeta
+  customPrismaImportPath = "../generated/client/client"
+}
+```
+
+**Las variables de entorno no se cargan automáticamente.** Prisma 7 ya no lee el `.env` automáticamente. Agrega `import "dotenv/config"` al inicio de cualquier archivo que use `PrismaClient` o llama a `dotenv.config()` antes de instanciarlo.
+
+**Alinea las versiones de `prisma` CLI y `@prisma/client`.** Mantén ambos paquetes siempre en la misma versión para evitar errores en runtime durante el inicio.
 
 ¡Siéntete libre de enviar PRs con mejoras y nuevas funciones. Mantengamos esta lib juntos!
 
