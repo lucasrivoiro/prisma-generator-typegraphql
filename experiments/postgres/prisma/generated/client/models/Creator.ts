@@ -171,7 +171,7 @@ export type CreatorGroupByOutputType = {
   _max: CreatorMaxAggregateOutputType | null
 }
 
-type GetCreatorGroupByPayload<T extends CreatorGroupByArgs> = Prisma.PrismaPromise<
+export type GetCreatorGroupByPayload<T extends CreatorGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<CreatorGroupByOutputType, T['by']> &
       {

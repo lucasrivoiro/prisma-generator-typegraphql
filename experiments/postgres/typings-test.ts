@@ -1,6 +1,6 @@
 import * as TypeGraphQLPrisma from "./prisma/generated/type-graphql";
-import { Prisma } from "./prisma/generated/client";
-import * as PrismaModels from "./prisma/generated/client";
+import { Prisma } from "./prisma/generated/client/client";
+import * as PrismaModels from "./prisma/generated/client/client";
 
 process.exit(1);
 

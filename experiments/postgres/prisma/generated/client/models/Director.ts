@@ -137,7 +137,7 @@ export type DirectorGroupByOutputType = {
   _max: DirectorMaxAggregateOutputType | null
 }
 
-type GetDirectorGroupByPayload<T extends DirectorGroupByArgs> = Prisma.PrismaPromise<
+export type GetDirectorGroupByPayload<T extends DirectorGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<DirectorGroupByOutputType, T['by']> &
       {

@@ -18,7 +18,7 @@ generator typegraphql {
   useUncheckedScalarInputs = false
   emitIdAsIDType           = true
   // emitOnly                 = ["enums", "models"]
-  customPrismaImportPath   = "../client"
+  customPrismaImportPath   = "../client/client"
   contextPrismaKey         = "prismaClient"
   useSimpleInputs          = true
   emitRedundantTypesInfo   = true

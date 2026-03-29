@@ -193,7 +193,7 @@ export type NativeTypeModelGroupByOutputType = {
   _max: NativeTypeModelMaxAggregateOutputType | null
 }
 
-type GetNativeTypeModelGroupByPayload<T extends NativeTypeModelGroupByArgs> = Prisma.PrismaPromise<
+export type GetNativeTypeModelGroupByPayload<T extends NativeTypeModelGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<NativeTypeModelGroupByOutputType, T['by']> &
       {

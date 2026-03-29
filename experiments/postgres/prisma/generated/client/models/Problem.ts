@@ -182,7 +182,7 @@ export type ProblemGroupByOutputType = {
   _max: ProblemMaxAggregateOutputType | null
 }
 
-type GetProblemGroupByPayload<T extends ProblemGroupByArgs> = Prisma.PrismaPromise<
+export type GetProblemGroupByPayload<T extends ProblemGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ProblemGroupByOutputType, T['by']> &
       {

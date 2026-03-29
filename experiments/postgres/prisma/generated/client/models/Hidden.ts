@@ -137,7 +137,7 @@ export type HiddenGroupByOutputType = {
   _max: HiddenMaxAggregateOutputType | null
 }
 
-type GetHiddenGroupByPayload<T extends HiddenGroupByArgs> = Prisma.PrismaPromise<
+export type GetHiddenGroupByPayload<T extends HiddenGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<HiddenGroupByOutputType, T['by']> &
       {

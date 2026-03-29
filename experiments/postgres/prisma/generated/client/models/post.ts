@@ -234,7 +234,7 @@ export type PostGroupByOutputType = {
   _max: PostMaxAggregateOutputType | null
 }
 
-type GetPostGroupByPayload<T extends postGroupByArgs> = Prisma.PrismaPromise<
+export type GetPostGroupByPayload<T extends postGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<PostGroupByOutputType, T['by']> &
       {

@@ -144,7 +144,7 @@ export type PatientGroupByOutputType = {
   _max: PatientMaxAggregateOutputType | null
 }
 
-type GetPatientGroupByPayload<T extends PatientGroupByArgs> = Prisma.PrismaPromise<
+export type GetPatientGroupByPayload<T extends PatientGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<PatientGroupByOutputType, T['by']> &
       {
