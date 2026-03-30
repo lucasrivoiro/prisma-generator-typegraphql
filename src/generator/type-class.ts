@@ -13,6 +13,7 @@ import { outputsFolderName, inputsFolderName } from "./config";
 import {
   generateTypeGraphQLImport,
   generateInputsImports,
+  generateTypeOnlyInputsImports,
   generateEnumsImports,
   generateArgsImports,
   generateGraphQLScalarsImport,
@@ -25,6 +26,42 @@ import { DmmfDocument } from "./dmmf/dmmf-document";
 import { DMMF } from "./dmmf/types";
 import { GeneratorOptions } from "./options";
 import { pascalCase } from "./helpers";
+
+/**
+ * Returns the type thunk expression for a `@Field` decorator argument.
+ *
+ * For **self-referential** input types (where a field's type is the same
+ * class being defined in the current file), a lazy `require()` call is used
+ * instead of a direct class reference. This prevents circular module
+ * evaluation errors (e.g. Turbopack's "Cannot access X before
+ * initialization") that arise because the class binding is not yet
+ * established when its own property decorators are evaluated in ESM.
+ *
+ * For cross-file input type references that are **not** self-referential,
+ * the class is imported via a normal `import` statement at the top of the
+ * file so that TypeGraphQL's `@InputType()` decorator runs—and the class
+ * gets registered—before `buildSchema` is ever called.
+ *
+ * @param field - The schema arg representing the field.
+ * @param currentTypeName - The name of the input class currently being generated.
+ * @returns The expression to use as the first argument of `@Field`.
+ */
+function getInputFieldTypeThunk(
+  field: DMMF.SchemaArg,
+  currentTypeName: string,
+): string {
+  if (field.selectedInputType.location === "inputObjectTypes") {
+    const typeName = field.selectedInputType.type;
+    if (typeName === currentTypeName) {
+      // Self-referential: use lazy require() to avoid ESM/Turbopack TDZ.
+      const lazyRef = `require("./${typeName}").${typeName}`;
+      return field.selectedInputType.isList ? `[${lazyRef}]` : lazyRef;
+    }
+    // Cross-file dep: the class is available via a normal top-level import.
+    return field.typeGraphQLType;
+  }
+  return field.typeGraphQLType;
+}
 
 export function generateOutputTypeClassFromType(
   project: Project,
@@ -150,7 +187,12 @@ export function generateOutputTypeClassFromType(
           {
             name: "args",
             type: field.argsTypeName,
-            decorators: [{ name: "TypeGraphQL.Args", arguments: [`() => ${field.argsTypeName}`] }],
+            decorators: [
+              {
+                name: "TypeGraphQL.Args",
+                arguments: [`() => ${field.argsTypeName}`],
+              },
+            ],
           },
         ],
         statements: [Writers.returnStatement(`root.${field.name}`)],
@@ -177,6 +219,9 @@ export function generateInputTypeClassFromType(
   generateGraphQLScalarsImport(sourceFile);
   generatePrismaNamespaceImport(sourceFile, options, 2);
   generateCustomScalarsImport(sourceFile, 2);
+  // Cross-file input type dependencies: use a normal value import so that
+  // their `@InputType()` decorators run before `buildSchema` collects type
+  // metadata. A direct class reference is used in the `@Field` thunk.
   generateInputsImports(
     sourceFile,
     inputType.fields
@@ -184,6 +229,11 @@ export function generateInputTypeClassFromType(
       .map(field => field.selectedInputType.type)
       .filter(fieldType => fieldType !== inputType.typeName),
   );
+  // Self-referential fields reference `inputType.typeName` itself, which is
+  // already in scope (defined in this same file). No import is needed.
+  // The `@Field` thunk uses a lazy `require()` to avoid an ESM/Turbopack
+  // TDZ error when the class binding is accessed before initialization
+  // (see `getInputFieldTypeThunk`).
   generateEnumsImports(
     sourceFile,
     inputType.fields
@@ -226,7 +276,7 @@ export function generateInputTypeClassFromType(
                 {
                   name: "TypeGraphQL.Field",
                   arguments: [
-                    `_type => ${field.typeGraphQLType}`,
+                    `_type => ${getInputFieldTypeThunk(field, inputType.typeName)}`,
                     Writers.object({
                       nullable: `${!field.isRequired}`,
                     }),
@@ -250,7 +300,7 @@ export function generateInputTypeClassFromType(
           {
             name: "TypeGraphQL.Field",
             arguments: [
-              `_type => ${field.typeGraphQLType}`,
+              `_type => ${getInputFieldTypeThunk(field, inputType.typeName)}`,
               Writers.object({
                 nullable: `${!field.isRequired}`,
               }),

@@ -338,13 +338,27 @@ export function generateResolversIndexFile(
 export const generateModelsImports = createImportGenerator(modelsFolderName);
 export const generateEnumsImports = createImportGenerator(enumsFolderName);
 export const generateInputsImports = createImportGenerator(inputsFolderName);
+/**
+ * Generates `import type` declarations for input types.
+ * Type-only imports are erased at runtime, which breaks circular module
+ * evaluation chains (e.g. under Turbopack). The actual class references
+ * in `@Field` decorators must use lazy `require()` calls instead —
+ * see `getInputFieldTypeThunk` in type-class.ts.
+ */
+export const generateTypeOnlyInputsImports = createImportGenerator(
+  inputsFolderName,
+  { isTypeOnly: true },
+);
 export const generateOutputsImports = createImportGenerator(outputsFolderName);
 // TODO: unify with generateOutputsImports
 export const generateResolversOutputsImports = createImportGenerator(
   `${resolversFolderName}/${outputsFolderName}`,
 );
 export const generateArgsImports = createImportGenerator(argsFolderName);
-function createImportGenerator(elementsDirName: string) {
+function createImportGenerator(
+  elementsDirName: string,
+  options: { isTypeOnly?: boolean } = {},
+) {
   return (sourceFile: SourceFile, elementsNames: string[], level = 1) => {
     const distinctElementsNames = [...new Set(elementsNames)].sort();
     for (const elementName of distinctElementsNames) {
@@ -359,6 +373,7 @@ function createImportGenerator(elementsDirName: string) {
         // TODO: refactor to default exports
         // defaultImport: elementName,
         namedImports: [elementName],
+        isTypeOnly: options.isTypeOnly ?? false,
       });
     }
   };

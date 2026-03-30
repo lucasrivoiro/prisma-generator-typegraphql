@@ -14,17 +14,17 @@ import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilt
 
 @TypeGraphQL.InputType(\\"SampleScalarWhereWithAggregatesInput\\", {})
 export class SampleScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [SampleScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleScalarWhereWithAggregatesInput\\").SampleScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: SampleScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleScalarWhereWithAggregatesInput\\").SampleScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: SampleScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleScalarWhereWithAggregatesInput\\").SampleScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: SampleScalarWhereWithAggregatesInput[] | undefined;
@@ -625,7 +625,7 @@ export class NestedEnumColorFilter {
   })
   notIn?: Array<\\"RED\\" | \\"GREEN\\" | \\"BLUE\\"> | undefined;
 
-  @TypeGraphQL.Field(_type => NestedEnumColorFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedEnumColorFilter\\").NestedEnumColorFilter, {
     nullable: true
   })
   not?: NestedEnumColorFilter | undefined;
@@ -1395,17 +1395,17 @@ import { StringNullableFilter } from \\"../inputs/StringNullableFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;
@@ -1623,17 +1623,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"FirstModelScalarWhereInput\\", {})
 export class FirstModelScalarWhereInput {
-  @TypeGraphQL.Field(_type => [FirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelScalarWhereInput\\").FirstModelScalarWhereInput], {
     nullable: true
   })
   AND?: FirstModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelScalarWhereInput\\").FirstModelScalarWhereInput], {
     nullable: true
   })
   OR?: FirstModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelScalarWhereInput\\").FirstModelScalarWhereInput], {
     nullable: true
   })
   NOT?: FirstModelScalarWhereInput[] | undefined;
@@ -1668,17 +1668,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"FirstModelWhereInput\\", {})
 export class FirstModelWhereInput {
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   AND?: FirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   OR?: FirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   NOT?: FirstModelWhereInput[] | undefined;
@@ -1891,17 +1891,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"FirstModelWhereInput\\", {})
 export class FirstModelWhereInput {
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   AND?: FirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   OR?: FirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./FirstModelWhereInput\\").FirstModelWhereInput], {
     nullable: true
   })
   NOT?: FirstModelWhereInput[] | undefined;
@@ -2054,17 +2054,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SecondModelScalarWhereInput\\", {})
 export class SecondModelScalarWhereInput {
-  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelScalarWhereInput\\").SecondModelScalarWhereInput], {
     nullable: true
   })
   AND?: SecondModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelScalarWhereInput\\").SecondModelScalarWhereInput], {
     nullable: true
   })
   OR?: SecondModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelScalarWhereInput\\").SecondModelScalarWhereInput], {
     nullable: true
   })
   NOT?: SecondModelScalarWhereInput[] | undefined;
@@ -2104,17 +2104,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SecondModelWhereInput\\", {})
 export class SecondModelWhereInput {
-  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelWhereInput\\").SecondModelWhereInput], {
     nullable: true
   })
   AND?: SecondModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelWhereInput\\").SecondModelWhereInput], {
     nullable: true
   })
   OR?: SecondModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SecondModelWhereInput\\").SecondModelWhereInput], {
     nullable: true
   })
   NOT?: SecondModelWhereInput[] | undefined;
@@ -2579,7 +2579,7 @@ export class NestedBoolFilter {
   })
   equals?: boolean | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBoolFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedBoolFilter\\").NestedBoolFilter, {
     nullable: true
   })
   not?: NestedBoolFilter | undefined;
@@ -2630,7 +2630,7 @@ export class NestedDateTimeFilter {
   })
   gte?: Date | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedDateTimeFilter\\").NestedDateTimeFilter, {
     nullable: true
   })
   not?: NestedDateTimeFilter | undefined;
@@ -2681,7 +2681,7 @@ export class NestedFloatFilter {
   })
   gte?: number | undefined;
 
-  @TypeGraphQL.Field(_type => NestedFloatFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedFloatFilter\\").NestedFloatFilter, {
     nullable: true
   })
   not?: NestedFloatFilter | undefined;
@@ -2732,7 +2732,7 @@ export class NestedIntFilter {
   })
   gte?: number | undefined;
 
-  @TypeGraphQL.Field(_type => NestedIntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedIntFilter\\").NestedIntFilter, {
     nullable: true
   })
   not?: NestedIntFilter | undefined;
@@ -2880,7 +2880,7 @@ export class NestedStringNullableFilter {
   })
   endsWith?: string | undefined;
 
-  @TypeGraphQL.Field(_type => NestedStringNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedStringNullableFilter\\").NestedStringNullableFilter, {
     nullable: true
   })
   not?: NestedStringNullableFilter | undefined;
@@ -3389,17 +3389,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"DirectorWhereInput\\", {})
 export class DirectorWhereInput {
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./DirectorWhereInput\\").DirectorWhereInput], {
     nullable: true
   })
   AND?: DirectorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./DirectorWhereInput\\").DirectorWhereInput], {
     nullable: true
   })
   OR?: DirectorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./DirectorWhereInput\\").DirectorWhereInput], {
     nullable: true
   })
   NOT?: DirectorWhereInput[] | undefined;
@@ -3627,17 +3627,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"MovieScalarWhereInput\\", {})
 export class MovieScalarWhereInput {
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieScalarWhereInput\\").MovieScalarWhereInput], {
     nullable: true
   })
   AND?: MovieScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieScalarWhereInput\\").MovieScalarWhereInput], {
     nullable: true
   })
   OR?: MovieScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieScalarWhereInput\\").MovieScalarWhereInput], {
     nullable: true
   })
   NOT?: MovieScalarWhereInput[] | undefined;
@@ -3676,17 +3676,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"MovieWhereInput\\", {})
 export class MovieWhereInput {
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieWhereInput\\").MovieWhereInput], {
     nullable: true
   })
   AND?: MovieWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieWhereInput\\").MovieWhereInput], {
     nullable: true
   })
   OR?: MovieWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./MovieWhereInput\\").MovieWhereInput], {
     nullable: true
   })
   NOT?: MovieWhereInput[] | undefined;
@@ -3979,17 +3979,17 @@ import { IntFilter } from \\"../inputs/IntFilter\\";
 
 @TypeGraphQL.InputType(\\"NativeTypeModelWhereInput\\", {})
 export class NativeTypeModelWhereInput {
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./NativeTypeModelWhereInput\\").NativeTypeModelWhereInput], {
     nullable: true
   })
   AND?: NativeTypeModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./NativeTypeModelWhereInput\\").NativeTypeModelWhereInput], {
     nullable: true
   })
   OR?: NativeTypeModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./NativeTypeModelWhereInput\\").NativeTypeModelWhereInput], {
     nullable: true
   })
   NOT?: NativeTypeModelWhereInput[] | undefined;
@@ -6443,7 +6443,7 @@ export class NestedBytesNullableFilter {
   })
   notIn?: Buffer[] | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBytesNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedBytesNullableFilter\\").NestedBytesNullableFilter, {
     nullable: true
   })
   not?: NestedBytesNullableFilter | undefined;
@@ -6476,7 +6476,7 @@ export class NestedBytesNullableWithAggregatesFilter {
   })
   notIn?: Buffer[] | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBytesNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedBytesNullableWithAggregatesFilter\\").NestedBytesNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedBytesNullableWithAggregatesFilter | undefined;
@@ -6542,7 +6542,7 @@ export class NestedDecimalNullableFilter {
   })
   gte?: Prisma.Decimal | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDecimalNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedDecimalNullableFilter\\").NestedDecimalNullableFilter, {
     nullable: true
   })
   not?: NestedDecimalNullableFilter | undefined;
@@ -6595,7 +6595,7 @@ export class NestedDecimalNullableWithAggregatesFilter {
   })
   gte?: Prisma.Decimal | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDecimalNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedDecimalNullableWithAggregatesFilter\\").NestedDecimalNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedDecimalNullableWithAggregatesFilter | undefined;
@@ -6933,7 +6933,7 @@ export class NestedStringFilter {
   })
   search?: string | undefined;
 
-  @TypeGraphQL.Field(_type => NestedStringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./NestedStringFilter\\").NestedStringFilter, {
     nullable: true
   })
   not?: NestedStringFilter | undefined;
@@ -7129,17 +7129,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleWhereInput\\", {})
 export class SampleWhereInput {
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   AND?: SampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   OR?: SampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   NOT?: SampleWhereInput[] | undefined;
@@ -7238,17 +7238,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"RenamedFirstModelScalarWhereInput\\", {})
 export class RenamedFirstModelScalarWhereInput {
-  @TypeGraphQL.Field(_type => [RenamedFirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelScalarWhereInput\\").RenamedFirstModelScalarWhereInput], {
     nullable: true
   })
   AND?: RenamedFirstModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelScalarWhereInput\\").RenamedFirstModelScalarWhereInput], {
     nullable: true
   })
   OR?: RenamedFirstModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelScalarWhereInput\\").RenamedFirstModelScalarWhereInput], {
     nullable: true
   })
   NOT?: RenamedFirstModelScalarWhereInput[] | undefined;
@@ -7283,17 +7283,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"RenamedFirstModelWhereInput\\", {})
 export class RenamedFirstModelWhereInput {
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   AND?: RenamedFirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   OR?: RenamedFirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   NOT?: RenamedFirstModelWhereInput[] | undefined;
@@ -7506,17 +7506,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"RenamedFirstModelWhereInput\\", {})
 export class RenamedFirstModelWhereInput {
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   AND?: RenamedFirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   OR?: RenamedFirstModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedFirstModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedFirstModelWhereInput\\").RenamedFirstModelWhereInput], {
     nullable: true
   })
   NOT?: RenamedFirstModelWhereInput[] | undefined;
@@ -7669,17 +7669,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"RenamedSecondModelScalarWhereInput\\", {})
 export class RenamedSecondModelScalarWhereInput {
-  @TypeGraphQL.Field(_type => [RenamedSecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelScalarWhereInput\\").RenamedSecondModelScalarWhereInput], {
     nullable: true
   })
   AND?: RenamedSecondModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedSecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelScalarWhereInput\\").RenamedSecondModelScalarWhereInput], {
     nullable: true
   })
   OR?: RenamedSecondModelScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedSecondModelScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelScalarWhereInput\\").RenamedSecondModelScalarWhereInput], {
     nullable: true
   })
   NOT?: RenamedSecondModelScalarWhereInput[] | undefined;
@@ -7719,17 +7719,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"RenamedSecondModelWhereInput\\", {})
 export class RenamedSecondModelWhereInput {
-  @TypeGraphQL.Field(_type => [RenamedSecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelWhereInput\\").RenamedSecondModelWhereInput], {
     nullable: true
   })
   AND?: RenamedSecondModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedSecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelWhereInput\\").RenamedSecondModelWhereInput], {
     nullable: true
   })
   OR?: RenamedSecondModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [RenamedSecondModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./RenamedSecondModelWhereInput\\").RenamedSecondModelWhereInput], {
     nullable: true
   })
   NOT?: RenamedSecondModelWhereInput[] | undefined;
@@ -7947,17 +7947,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"ExampleWhereInput\\", {})
 export class ExampleWhereInput {
-  @TypeGraphQL.Field(_type => [ExampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./ExampleWhereInput\\").ExampleWhereInput], {
     nullable: true
   })
   AND?: ExampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ExampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./ExampleWhereInput\\").ExampleWhereInput], {
     nullable: true
   })
   OR?: ExampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ExampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./ExampleWhereInput\\").ExampleWhereInput], {
     nullable: true
   })
   NOT?: ExampleWhereInput[] | undefined;
@@ -8155,17 +8155,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleWhereInput\\", {})
 export class SampleWhereInput {
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   AND?: SampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   OR?: SampleWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleWhereInput\\").SampleWhereInput], {
     nullable: true
   })
   NOT?: SampleWhereInput[] | undefined;

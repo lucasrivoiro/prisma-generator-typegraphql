@@ -92,17 +92,17 @@ import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilt
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
@@ -195,17 +195,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
@@ -403,17 +403,17 @@ import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilt
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
@@ -511,17 +511,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
@@ -717,17 +717,17 @@ import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilt
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
@@ -810,17 +810,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
@@ -990,17 +990,17 @@ import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilt
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserScalarWhereWithAggregatesInput\\").UserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
@@ -1098,17 +1098,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
@@ -1307,17 +1307,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;
@@ -1466,17 +1466,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;
@@ -1630,17 +1630,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;
@@ -1777,17 +1777,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;
@@ -1980,17 +1980,17 @@ import { StringFilter } from \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   AND?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   OR?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [SampleModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./SampleModelWhereInput\\").SampleModelWhereInput], {
     nullable: true
   })
   NOT?: SampleModelWhereInput[] | undefined;

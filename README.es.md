@@ -2,7 +2,7 @@
 
 # Integración TypeGraphQL & Prisma
 
-🌐 *Lee en otros idiomas: [English](README.md) | [Português](README.pt-BR.md)*
+🌐 _Lee en otros idiomas: [English](README.md) | [Português](README.pt-BR.md)_
 
 Generador Prisma para emitir tipos TypeGraphQL y resolvers CRUD desde tu esquema Prisma. Este proyecto es una copia de [**typegraphql-prisma**](https://github.com/MichalLytek/typegraphql-prisma), y tengo la intención de mantenerlo actualizado, implementando nuevas funciones a medida que Prisma se actualiza.
 
@@ -12,12 +12,29 @@ Esta biblioteca ahora soporta completamente **Prisma 7**, incluyendo todos los b
 
 > ⚠️ **Aviso sobre MongoDB:** Prisma 7 aún no soporta MongoDB. Si estás usando MongoDB, por favor usa la versión `0.1.0` de esta biblioteca con Prisma 6.19 hasta que se agregue el soporte para MongoDB en Prisma 7.
 
+## 🔧 Changelog
+
+### v1.0.4
+
+**Corregido: errores de importación circular con bundlers como Turbopack.**
+
+Las versiones anteriores generaban sentencias `import` entre archivos de input types que podían formar ciclos de dependencia. Bundlers estrictos como el Turbopack de Next.js lanzaban un `ReferenceError: Cannot access 'X' before initialization` en tiempo de ejecución porque una clase era referenciada antes de que su módulo terminara de cargarse.
+
+La versión `1.0.4` resuelve esto:
+
+- Generando `import type` (importaciones solo de tipo) para las referencias entre input types — estas se eliminan en runtime y no crean dependencias de carga de módulos.
+- Usando una llamada lazy `require()` dentro de cada thunk de tipo en `@Field`, de modo que la clase solo se accede después de que todos los módulos están completamente inicializados.
+
+No se necesitan cambios en tu schema Prisma ni en el código de la aplicación — solo regenera con `prisma generate`.
+
+---
+
 ### Compatibilidad de versiones:
 
-| Versión de la Biblioteca | Versión de Prisma | Soporte MongoDB |
-|-------------------------|-------------------|-----------------|
-| `1.0.x`                 | Prisma 7.x        | ❌ Aún no        |
-| `0.1.0`                 | Prisma 5.18.0+ / 6.x | ✅ Sí        |
+| Versión de la Biblioteca | Versión de Prisma    | Soporte MongoDB |
+| ------------------------ | -------------------- | --------------- |
+| `1.0.x`                  | Prisma 7.x           | ❌ Aún no       |
+| `0.1.0`                  | Prisma 5.18.0+ / 6.x | ✅ Sí           |
 
 > ⚠️ **Importante:** Si estás usando Prisma 5 o 6, instala la versión `0.1.0`. La versión `1.0.x` solo es compatible con Prisma 7.
 
@@ -103,6 +120,7 @@ npm run start
 El servidor estará disponible en http://localhost:4000/graphql
 
 **Requisitos:**
+
 - Docker y Docker Compose
 - Node.js 20.19.0+
 
@@ -136,6 +154,7 @@ npm run start
 El servidor estará disponible en http://localhost:4000/graphql
 
 **Requisitos:**
+
 - Docker y Docker Compose
 - Node.js 20.19.0+
 - Prisma 6.19 (MongoDB no soportado en Prisma 7 aún)
