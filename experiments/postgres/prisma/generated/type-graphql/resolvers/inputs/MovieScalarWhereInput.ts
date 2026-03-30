@@ -6,17 +6,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("MovieScalarWhereInput", {})
 export class MovieScalarWhereInput {
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereInput").MovieScalarWhereInput], {
     nullable: true
   })
   AND?: MovieScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereInput").MovieScalarWhereInput], {
     nullable: true
   })
   OR?: MovieScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereInput").MovieScalarWhereInput], {
     nullable: true
   })
   NOT?: MovieScalarWhereInput[] | undefined;

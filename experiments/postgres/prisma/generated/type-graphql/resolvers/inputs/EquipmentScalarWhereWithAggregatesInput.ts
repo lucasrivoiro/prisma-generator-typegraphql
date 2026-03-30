@@ -7,17 +7,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("EquipmentScalarWhereWithAggregatesInput", {})
 export class EquipmentScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [EquipmentScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentScalarWhereWithAggregatesInput").EquipmentScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: EquipmentScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [EquipmentScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentScalarWhereWithAggregatesInput").EquipmentScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: EquipmentScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [EquipmentScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentScalarWhereWithAggregatesInput").EquipmentScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: EquipmentScalarWhereWithAggregatesInput[] | undefined;

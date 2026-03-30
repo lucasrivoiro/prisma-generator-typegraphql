@@ -9,17 +9,17 @@ import { IntWithAggregatesFilter } from "../inputs/IntWithAggregatesFilter";
 
 @TypeGraphQL.InputType("NativeTypeModelScalarWhereWithAggregatesInput", {})
 export class NativeTypeModelScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [NativeTypeModelScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelScalarWhereWithAggregatesInput").NativeTypeModelScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: NativeTypeModelScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelScalarWhereWithAggregatesInput").NativeTypeModelScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: NativeTypeModelScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelScalarWhereWithAggregatesInput").NativeTypeModelScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: NativeTypeModelScalarWhereWithAggregatesInput[] | undefined;

@@ -42,7 +42,7 @@ export class NestedUuidNullableWithAggregatesFilter {
   })
   gte?: string | undefined;
 
-  @TypeGraphQL.Field(_type => NestedUuidNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedUuidNullableWithAggregatesFilter").NestedUuidNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedUuidNullableWithAggregatesFilter | undefined;

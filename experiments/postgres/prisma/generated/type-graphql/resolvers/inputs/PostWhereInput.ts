@@ -15,17 +15,17 @@ import { UserScalarRelationFilter } from "../inputs/UserScalarRelationFilter";
 
 @TypeGraphQL.InputType("PostWhereInput", {})
 export class PostWhereInput {
-  @TypeGraphQL.Field(_type => [PostWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostWhereInput").PostWhereInput], {
     nullable: true
   })
   AND?: PostWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PostWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostWhereInput").PostWhereInput], {
     nullable: true
   })
   OR?: PostWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PostWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostWhereInput").PostWhereInput], {
     nullable: true
   })
   NOT?: PostWhereInput[] | undefined;

@@ -6,17 +6,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("DirectorScalarWhereWithAggregatesInput", {})
 export class DirectorScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [DirectorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorScalarWhereWithAggregatesInput").DirectorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: DirectorScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorScalarWhereWithAggregatesInput").DirectorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: DirectorScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorScalarWhereWithAggregatesInput").DirectorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: DirectorScalarWhereWithAggregatesInput[] | undefined;

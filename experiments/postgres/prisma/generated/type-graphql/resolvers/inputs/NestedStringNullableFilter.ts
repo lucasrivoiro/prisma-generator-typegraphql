@@ -55,7 +55,7 @@ export class NestedStringNullableFilter {
   })
   endsWith?: string | undefined;
 
-  @TypeGraphQL.Field(_type => NestedStringNullableFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedStringNullableFilter").NestedStringNullableFilter, {
     nullable: true
   })
   not?: NestedStringNullableFilter | undefined;

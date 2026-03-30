@@ -42,7 +42,7 @@ export class NestedDecimalNullableWithAggregatesFilter {
   })
   gte?: Prisma.Decimal | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDecimalNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedDecimalNullableWithAggregatesFilter").NestedDecimalNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedDecimalNullableWithAggregatesFilter | undefined;

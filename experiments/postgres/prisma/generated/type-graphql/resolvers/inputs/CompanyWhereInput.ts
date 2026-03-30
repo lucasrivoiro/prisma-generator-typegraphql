@@ -13,17 +13,17 @@ import { UuidNullableFilter } from "../inputs/UuidNullableFilter";
 
 @TypeGraphQL.InputType("CompanyWhereInput", {})
 export class CompanyWhereInput {
-  @TypeGraphQL.Field(_type => [CompanyWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyWhereInput").CompanyWhereInput], {
     nullable: true
   })
   AND?: CompanyWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CompanyWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyWhereInput").CompanyWhereInput], {
     nullable: true
   })
   OR?: CompanyWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CompanyWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyWhereInput").CompanyWhereInput], {
     nullable: true
   })
   NOT?: CompanyWhereInput[] | undefined;

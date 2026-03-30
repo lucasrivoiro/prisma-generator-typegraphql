@@ -10,7 +10,7 @@ export class NestedBoolFilter {
   })
   equals?: boolean | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBoolFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedBoolFilter").NestedBoolFilter, {
     nullable: true
   })
   not?: NestedBoolFilter | undefined;

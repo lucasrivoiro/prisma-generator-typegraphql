@@ -21,7 +21,7 @@ export class NestedEnumPostKindNullableFilter {
   })
   notIn?: Array<"BLOG" | "ADVERT"> | undefined;
 
-  @TypeGraphQL.Field(_type => NestedEnumPostKindNullableFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedEnumPostKindNullableFilter").NestedEnumPostKindNullableFilter, {
     nullable: true
   })
   not?: NestedEnumPostKindNullableFilter | undefined;

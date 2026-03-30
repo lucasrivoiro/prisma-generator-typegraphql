@@ -6,17 +6,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("PatientScalarWhereWithAggregatesInput", {})
 export class PatientScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [PatientScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientScalarWhereWithAggregatesInput").PatientScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: PatientScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PatientScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientScalarWhereWithAggregatesInput").PatientScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: PatientScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PatientScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientScalarWhereWithAggregatesInput").PatientScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: PatientScalarWhereWithAggregatesInput[] | undefined;

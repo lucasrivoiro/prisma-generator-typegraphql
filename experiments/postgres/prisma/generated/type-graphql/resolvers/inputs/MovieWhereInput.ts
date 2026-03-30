@@ -7,17 +7,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("MovieWhereInput", {})
 export class MovieWhereInput {
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieWhereInput").MovieWhereInput], {
     nullable: true
   })
   AND?: MovieWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieWhereInput").MovieWhereInput], {
     nullable: true
   })
   OR?: MovieWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieWhereInput").MovieWhereInput], {
     nullable: true
   })
   NOT?: MovieWhereInput[] | undefined;

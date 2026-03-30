@@ -8,17 +8,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("ProblemScalarWhereInput", {})
 export class ProblemScalarWhereInput {
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereInput").ProblemScalarWhereInput], {
     nullable: true
   })
   AND?: ProblemScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereInput").ProblemScalarWhereInput], {
     nullable: true
   })
   OR?: ProblemScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereInput").ProblemScalarWhereInput], {
     nullable: true
   })
   NOT?: ProblemScalarWhereInput[] | undefined;

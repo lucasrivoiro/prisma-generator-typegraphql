@@ -40,7 +40,7 @@ export class NestedFloatFilter {
   })
   gte?: number | undefined;
 
-  @TypeGraphQL.Field(_type => NestedFloatFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedFloatFilter").NestedFloatFilter, {
     nullable: true
   })
   not?: NestedFloatFilter | undefined;

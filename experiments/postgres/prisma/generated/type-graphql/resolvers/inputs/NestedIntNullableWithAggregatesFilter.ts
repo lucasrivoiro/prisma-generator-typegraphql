@@ -42,7 +42,7 @@ export class NestedIntNullableWithAggregatesFilter {
   })
   gte?: number | undefined;
 
-  @TypeGraphQL.Field(_type => NestedIntNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedIntNullableWithAggregatesFilter").NestedIntNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedIntNullableWithAggregatesFilter | undefined;

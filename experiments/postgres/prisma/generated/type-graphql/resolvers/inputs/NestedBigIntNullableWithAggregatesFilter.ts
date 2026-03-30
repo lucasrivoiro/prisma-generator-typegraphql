@@ -43,7 +43,7 @@ export class NestedBigIntNullableWithAggregatesFilter {
   })
   gte?: bigint | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBigIntNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedBigIntNullableWithAggregatesFilter").NestedBigIntNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedBigIntNullableWithAggregatesFilter | undefined;

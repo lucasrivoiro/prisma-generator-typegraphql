@@ -40,7 +40,7 @@ export class NestedDateTimeFilter {
   })
   gte?: Date | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDateTimeFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedDateTimeFilter").NestedDateTimeFilter, {
     nullable: true
   })
   not?: NestedDateTimeFilter | undefined;

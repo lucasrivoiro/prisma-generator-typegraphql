@@ -6,17 +6,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("MovieScalarWhereWithAggregatesInput", {})
 export class MovieScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [MovieScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereWithAggregatesInput").MovieScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: MovieScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereWithAggregatesInput").MovieScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: MovieScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MovieScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MovieScalarWhereWithAggregatesInput").MovieScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: MovieScalarWhereWithAggregatesInput[] | undefined;

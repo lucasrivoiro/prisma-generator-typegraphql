@@ -42,7 +42,7 @@ export class NestedFloatWithAggregatesFilter {
   })
   gte?: number | undefined;
 
-  @TypeGraphQL.Field(_type => NestedFloatWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedFloatWithAggregatesFilter").NestedFloatWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedFloatWithAggregatesFilter | undefined;

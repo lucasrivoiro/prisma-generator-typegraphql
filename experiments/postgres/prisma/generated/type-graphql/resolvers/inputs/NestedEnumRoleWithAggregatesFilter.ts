@@ -23,7 +23,7 @@ export class NestedEnumRoleWithAggregatesFilter {
   })
   notIn?: Array<"USER" | "ADMIN"> | undefined;
 
-  @TypeGraphQL.Field(_type => NestedEnumRoleWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedEnumRoleWithAggregatesFilter").NestedEnumRoleWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedEnumRoleWithAggregatesFilter | undefined;

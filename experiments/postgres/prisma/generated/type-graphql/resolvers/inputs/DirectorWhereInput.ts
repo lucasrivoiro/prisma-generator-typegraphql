@@ -7,17 +7,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("DirectorWhereInput", {})
 export class DirectorWhereInput {
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorWhereInput").DirectorWhereInput], {
     nullable: true
   })
   AND?: DirectorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorWhereInput").DirectorWhereInput], {
     nullable: true
   })
   OR?: DirectorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [DirectorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./DirectorWhereInput").DirectorWhereInput], {
     nullable: true
   })
   NOT?: DirectorWhereInput[] | undefined;

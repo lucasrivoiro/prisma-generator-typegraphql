@@ -11,17 +11,17 @@ import { UuidWithAggregatesFilter } from "../inputs/UuidWithAggregatesFilter";
 
 @TypeGraphQL.InputType("CompanyScalarWhereWithAggregatesInput", {})
 export class CompanyScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [CompanyScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyScalarWhereWithAggregatesInput").CompanyScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: CompanyScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CompanyScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyScalarWhereWithAggregatesInput").CompanyScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: CompanyScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CompanyScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CompanyScalarWhereWithAggregatesInput").CompanyScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: CompanyScalarWhereWithAggregatesInput[] | undefined;

@@ -7,17 +7,17 @@ import { StringNullableFilter } from "../inputs/StringNullableFilter";
 
 @TypeGraphQL.InputType("HiddenWhereInput", {})
 export class HiddenWhereInput {
-  @TypeGraphQL.Field(_type => [HiddenWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./HiddenWhereInput").HiddenWhereInput], {
     nullable: true
   })
   AND?: HiddenWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [HiddenWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./HiddenWhereInput").HiddenWhereInput], {
     nullable: true
   })
   OR?: HiddenWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [HiddenWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./HiddenWhereInput").HiddenWhereInput], {
     nullable: true
   })
   NOT?: HiddenWhereInput[] | undefined;

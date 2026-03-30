@@ -6,17 +6,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("PatientWhereInput", {})
 export class PatientWhereInput {
-  @TypeGraphQL.Field(_type => [PatientWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientWhereInput").PatientWhereInput], {
     nullable: true
   })
   AND?: PatientWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PatientWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientWhereInput").PatientWhereInput], {
     nullable: true
   })
   OR?: PatientWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PatientWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PatientWhereInput").PatientWhereInput], {
     nullable: true
   })
   NOT?: PatientWhereInput[] | undefined;

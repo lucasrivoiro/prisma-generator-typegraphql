@@ -13,17 +13,17 @@ import { StringNullableFilter } from "../inputs/StringNullableFilter";
 
 @TypeGraphQL.InputType("PostScalarWhereInput", {})
 export class PostScalarWhereInput {
-  @TypeGraphQL.Field(_type => [PostScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostScalarWhereInput").PostScalarWhereInput], {
     nullable: true
   })
   AND?: PostScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PostScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostScalarWhereInput").PostScalarWhereInput], {
     nullable: true
   })
   OR?: PostScalarWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [PostScalarWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./PostScalarWhereInput").PostScalarWhereInput], {
     nullable: true
   })
   NOT?: PostScalarWhereInput[] | undefined;

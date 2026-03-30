@@ -12,17 +12,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("MainUserScalarWhereWithAggregatesInput", {})
 export class MainUserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [MainUserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserScalarWhereWithAggregatesInput").MainUserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: MainUserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MainUserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserScalarWhereWithAggregatesInput").MainUserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: MainUserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MainUserScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserScalarWhereWithAggregatesInput").MainUserScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: MainUserScalarWhereWithAggregatesInput[] | undefined;

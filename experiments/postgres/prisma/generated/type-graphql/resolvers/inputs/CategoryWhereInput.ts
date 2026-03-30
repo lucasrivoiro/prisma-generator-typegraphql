@@ -7,17 +7,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("CategoryWhereInput", {})
 export class CategoryWhereInput {
-  @TypeGraphQL.Field(_type => [CategoryWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CategoryWhereInput").CategoryWhereInput], {
     nullable: true
   })
   AND?: CategoryWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CategoryWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CategoryWhereInput").CategoryWhereInput], {
     nullable: true
   })
   OR?: CategoryWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CategoryWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CategoryWhereInput").CategoryWhereInput], {
     nullable: true
   })
   NOT?: CategoryWhereInput[] | undefined;

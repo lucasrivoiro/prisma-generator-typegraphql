@@ -42,7 +42,7 @@ export class NestedDateTimeWithAggregatesFilter {
   })
   gte?: Date | undefined;
 
-  @TypeGraphQL.Field(_type => NestedDateTimeWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedDateTimeWithAggregatesFilter").NestedDateTimeWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedDateTimeWithAggregatesFilter | undefined;

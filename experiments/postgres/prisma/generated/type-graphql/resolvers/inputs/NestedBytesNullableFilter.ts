@@ -20,7 +20,7 @@ export class NestedBytesNullableFilter {
   })
   notIn?: Buffer[] | undefined;
 
-  @TypeGraphQL.Field(_type => NestedBytesNullableFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedBytesNullableFilter").NestedBytesNullableFilter, {
     nullable: true
   })
   not?: NestedBytesNullableFilter | undefined;

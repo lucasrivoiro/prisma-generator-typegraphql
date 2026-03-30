@@ -8,17 +8,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("ProblemScalarWhereWithAggregatesInput", {})
 export class ProblemScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereWithAggregatesInput").ProblemScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: ProblemScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereWithAggregatesInput").ProblemScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: ProblemScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemScalarWhereWithAggregatesInput").ProblemScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: ProblemScalarWhereWithAggregatesInput[] | undefined;

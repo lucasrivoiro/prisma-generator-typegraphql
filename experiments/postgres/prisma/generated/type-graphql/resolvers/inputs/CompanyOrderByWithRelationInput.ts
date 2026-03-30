@@ -63,7 +63,7 @@ export class CompanyOrderByWithRelationInput {
   })
   updated_at?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => CompanyOrderByWithRelationInput, {
+  @TypeGraphQL.Field(_type => require("./CompanyOrderByWithRelationInput").CompanyOrderByWithRelationInput, {
     nullable: true
   })
   parent?: CompanyOrderByWithRelationInput | undefined;

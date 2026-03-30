@@ -9,17 +9,17 @@ import { IntFilter } from "../inputs/IntFilter";
 
 @TypeGraphQL.InputType("NativeTypeModelWhereInput", {})
 export class NativeTypeModelWhereInput {
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelWhereInput").NativeTypeModelWhereInput], {
     nullable: true
   })
   AND?: NativeTypeModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelWhereInput").NativeTypeModelWhereInput], {
     nullable: true
   })
   OR?: NativeTypeModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [NativeTypeModelWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./NativeTypeModelWhereInput").NativeTypeModelWhereInput], {
     nullable: true
   })
   NOT?: NativeTypeModelWhereInput[] | undefined;

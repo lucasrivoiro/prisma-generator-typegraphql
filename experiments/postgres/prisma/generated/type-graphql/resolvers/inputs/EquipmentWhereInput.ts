@@ -7,17 +7,17 @@ import { StringNullableFilter } from "../inputs/StringNullableFilter";
 
 @TypeGraphQL.InputType("EquipmentWhereInput", {})
 export class EquipmentWhereInput {
-  @TypeGraphQL.Field(_type => [EquipmentWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentWhereInput").EquipmentWhereInput], {
     nullable: true
   })
   AND?: EquipmentWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [EquipmentWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentWhereInput").EquipmentWhereInput], {
     nullable: true
   })
   OR?: EquipmentWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [EquipmentWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./EquipmentWhereInput").EquipmentWhereInput], {
     nullable: true
   })
   NOT?: EquipmentWhereInput[] | undefined;

@@ -13,17 +13,17 @@ import { StringNullableListFilter } from "../inputs/StringNullableListFilter";
 
 @TypeGraphQL.InputType("MainUserWhereInput", {})
 export class MainUserWhereInput {
-  @TypeGraphQL.Field(_type => [MainUserWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserWhereInput").MainUserWhereInput], {
     nullable: true
   })
   AND?: MainUserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MainUserWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserWhereInput").MainUserWhereInput], {
     nullable: true
   })
   OR?: MainUserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [MainUserWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./MainUserWhereInput").MainUserWhereInput], {
     nullable: true
   })
   NOT?: MainUserWhereInput[] | undefined;

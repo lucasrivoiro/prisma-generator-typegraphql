@@ -23,7 +23,7 @@ export class NestedEnumPostKindNullableWithAggregatesFilter {
   })
   notIn?: Array<"BLOG" | "ADVERT"> | undefined;
 
-  @TypeGraphQL.Field(_type => NestedEnumPostKindNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require("./NestedEnumPostKindNullableWithAggregatesFilter").NestedEnumPostKindNullableWithAggregatesFilter, {
     nullable: true
   })
   not?: NestedEnumPostKindNullableWithAggregatesFilter | undefined;

@@ -8,17 +8,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("CreatorWhereInput", {})
 export class CreatorWhereInput {
-  @TypeGraphQL.Field(_type => [CreatorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorWhereInput").CreatorWhereInput], {
     nullable: true
   })
   AND?: CreatorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CreatorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorWhereInput").CreatorWhereInput], {
     nullable: true
   })
   OR?: CreatorWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CreatorWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorWhereInput").CreatorWhereInput], {
     nullable: true
   })
   NOT?: CreatorWhereInput[] | undefined;

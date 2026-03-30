@@ -10,17 +10,17 @@ import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("ProblemWhereInput", {})
 export class ProblemWhereInput {
-  @TypeGraphQL.Field(_type => [ProblemWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemWhereInput").ProblemWhereInput], {
     nullable: true
   })
   AND?: ProblemWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemWhereInput").ProblemWhereInput], {
     nullable: true
   })
   OR?: ProblemWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [ProblemWhereInput], {
+  @TypeGraphQL.Field(_type => [require("./ProblemWhereInput").ProblemWhereInput], {
     nullable: true
   })
   NOT?: ProblemWhereInput[] | undefined;

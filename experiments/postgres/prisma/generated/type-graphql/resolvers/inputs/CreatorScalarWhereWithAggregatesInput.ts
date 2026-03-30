@@ -7,17 +7,17 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("CreatorScalarWhereWithAggregatesInput", {})
 export class CreatorScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field(_type => [CreatorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorScalarWhereWithAggregatesInput").CreatorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   AND?: CreatorScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CreatorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorScalarWhereWithAggregatesInput").CreatorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   OR?: CreatorScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [CreatorScalarWhereWithAggregatesInput], {
+  @TypeGraphQL.Field(_type => [require("./CreatorScalarWhereWithAggregatesInput").CreatorScalarWhereWithAggregatesInput], {
     nullable: true
   })
   NOT?: CreatorScalarWhereWithAggregatesInput[] | undefined;
