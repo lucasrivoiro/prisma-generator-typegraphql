@@ -1,6 +1,6 @@
 {
   "name": "prisma-generator-typegraphql",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "prepare": "husky install",
     "build": "tsc",
