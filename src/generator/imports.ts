@@ -340,14 +340,27 @@ export const generateEnumsImports = createImportGenerator(enumsFolderName);
 export const generateInputsImports = createImportGenerator(inputsFolderName);
 /**
  * Generates `import type` declarations for input types.
- * Type-only imports are erased at runtime, which breaks circular module
- * evaluation chains (e.g. under Turbopack). The actual class references
- * in `@Field` decorators must use lazy `require()` calls instead —
- * see `getInputFieldTypeThunk` in type-class.ts.
+ * Type-only imports are erased at runtime, keeping the symbol in scope for
+ * TypeScript whilst avoiding live-binding access at module evaluation time.
+ * Use alongside `generateSideEffectInputsImports` so the module IS loaded
+ * (registering `@InputType()`) before `buildSchema` runs.
  */
 export const generateTypeOnlyInputsImports = createImportGenerator(
   inputsFolderName,
   { isTypeOnly: true },
+);
+/**
+ * Generates bare `import "./X"` side-effect declarations for input types.
+ *
+ * A side-effect-only import has no exported binding — it merely causes the
+ * module to be evaluated, which runs the `@InputType()` decorator and
+ * registers the class in TypeGraphQL's metadata storage.  Because there is
+ * no binding to read, it is safe in circular module chains under Turbopack
+ * (no TDZ hazard).  Pair with `generateTypeOnlyInputsImports` so that the
+ * identifier is still available to TypeScript as a type.
+ */
+export const generateSideEffectInputsImports = createSideEffectImportGenerator(
+  inputsFolderName,
 );
 export const generateOutputsImports = createImportGenerator(outputsFolderName);
 // TODO: unify with generateOutputsImports
@@ -355,6 +368,27 @@ export const generateResolversOutputsImports = createImportGenerator(
   `${resolversFolderName}/${outputsFolderName}`,
 );
 export const generateArgsImports = createImportGenerator(argsFolderName);
+/**
+ * Generates bare side-effect-only import declarations: `import "./X"`.
+ * Unlike `createImportGenerator`, no named binding is imported — only the
+ * module is evaluated as a side effect.
+ */
+function createSideEffectImportGenerator(elementsDirName: string) {
+  return (sourceFile: SourceFile, elementsNames: string[], level = 1) => {
+    const distinctElementsNames = [...new Set(elementsNames)].sort();
+    for (const elementName of distinctElementsNames) {
+      sourceFile.addImportDeclaration({
+        moduleSpecifier:
+          (level === 0 ? "./" : "") +
+          path.posix.join(
+            ...Array(level).fill(".."),
+            elementsDirName,
+            elementName,
+          ),
+      });
+    }
+  };
+}
 function createImportGenerator(
   elementsDirName: string,
   options: { isTypeOnly?: boolean } = {},

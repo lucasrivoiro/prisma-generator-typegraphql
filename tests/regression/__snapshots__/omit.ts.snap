@@ -57,7 +57,8 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import type { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import \\"../inputs/SortOrderInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"UserOrderByWithRelationInput\\", {})
@@ -72,7 +73,7 @@ export class UserOrderByWithRelationInput {
   })
   name?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrderInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SortOrderInput\\").SortOrderInput, {
     nullable: true
   })
   balance?: SortOrderInput | undefined;
@@ -85,10 +86,14 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
-import { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
-import { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
-import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import type { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
+import type { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import type { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
+import type { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import \\"../inputs/DateTimeWithAggregatesFilter\\";
+import \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import \\"../inputs/IntWithAggregatesFilter\\";
+import \\"../inputs/StringWithAggregatesFilter\\";
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
@@ -107,17 +112,17 @@ export class UserScalarWhereWithAggregatesInput {
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeWithAggregatesFilter\\").DateTimeWithAggregatesFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringWithAggregatesFilter\\").StringWithAggregatesFilter, {
     nullable: true
   })
   name?: StringWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableWithAggregatesFilter\\").FloatNullableWithAggregatesFilter, {
     nullable: true
   })
   balance?: FloatNullableWithAggregatesFilter | undefined;
@@ -130,23 +135,26 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateInput\\", {})
 export class UserUpdateInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -159,23 +167,26 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateManyMutationInput\\", {})
 export class UserUpdateManyMutationInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -188,10 +199,14 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
@@ -210,17 +225,17 @@ export class UserWhereInput {
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -233,39 +248,43 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
-import { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import type { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/StringFilter\\";
+import \\"../inputs/UserWhereInput\\";
 
 @TypeGraphQL.InputType(\\"UserWhereUniqueInput\\", {})
 export class UserWhereUniqueInput {
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -363,7 +382,8 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import type { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import \\"../inputs/SortOrderInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"UserOrderByWithRelationInput\\", {})
@@ -383,7 +403,7 @@ export class UserOrderByWithRelationInput {
   })
   name?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrderInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SortOrderInput\\").SortOrderInput, {
     nullable: true
   })
   balance?: SortOrderInput | undefined;
@@ -396,10 +416,14 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
-import { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
-import { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
-import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import type { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
+import type { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import type { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
+import type { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import \\"../inputs/DateTimeWithAggregatesFilter\\";
+import \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import \\"../inputs/IntWithAggregatesFilter\\";
+import \\"../inputs/StringWithAggregatesFilter\\";
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
@@ -418,22 +442,22 @@ export class UserScalarWhereWithAggregatesInput {
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntWithAggregatesFilter\\").IntWithAggregatesFilter, {
     nullable: true
   })
   id?: IntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeWithAggregatesFilter\\").DateTimeWithAggregatesFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringWithAggregatesFilter\\").StringWithAggregatesFilter, {
     nullable: true
   })
   name?: StringWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableWithAggregatesFilter\\").FloatNullableWithAggregatesFilter, {
     nullable: true
   })
   balance?: FloatNullableWithAggregatesFilter | undefined;
@@ -446,23 +470,26 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateInput\\", {})
 export class UserUpdateInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -475,23 +502,26 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateManyMutationInput\\", {})
 export class UserUpdateManyMutationInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -504,10 +534,14 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
@@ -526,22 +560,22 @@ export class UserWhereInput {
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -554,10 +588,14 @@ exports[`omit-fields when \`omitInputFieldsByDefault\` generator option is provi
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
-import { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import type { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/StringFilter\\";
+import \\"../inputs/UserWhereInput\\";
 
 @TypeGraphQL.InputType(\\"UserWhereUniqueInput\\", {})
 export class UserWhereUniqueInput {
@@ -566,32 +604,32 @@ export class UserWhereUniqueInput {
   })
   id?: number | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -682,7 +720,8 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import type { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import \\"../inputs/SortOrderInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"UserOrderByWithRelationInput\\", {})
@@ -710,10 +749,14 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
-import { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
-import { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
-import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import type { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
+import type { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import type { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
+import type { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import \\"../inputs/DateTimeWithAggregatesFilter\\";
+import \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import \\"../inputs/IntWithAggregatesFilter\\";
+import \\"../inputs/StringWithAggregatesFilter\\";
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
@@ -732,17 +775,17 @@ export class UserScalarWhereWithAggregatesInput {
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntWithAggregatesFilter\\").IntWithAggregatesFilter, {
     nullable: true
   })
   id?: IntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeWithAggregatesFilter\\").DateTimeWithAggregatesFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringWithAggregatesFilter\\").StringWithAggregatesFilter, {
     nullable: true
   })
   name?: StringWithAggregatesFilter | undefined;
@@ -755,18 +798,21 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateInput\\", {})
 export class UserUpdateInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
@@ -779,18 +825,21 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateManyMutationInput\\", {})
 export class UserUpdateManyMutationInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
@@ -803,10 +852,14 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
@@ -825,17 +878,17 @@ export class UserWhereInput {
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
@@ -848,10 +901,14 @@ exports[`omit-fields when model field has \`omit(input: true)\` set should prope
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
-import { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import type { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/StringFilter\\";
+import \\"../inputs/UserWhereInput\\";
 
 @TypeGraphQL.InputType(\\"UserWhereUniqueInput\\", {})
 export class UserWhereUniqueInput {
@@ -860,27 +917,27 @@ export class UserWhereUniqueInput {
   })
   id?: number | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
@@ -950,7 +1007,8 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import type { SortOrderInput } from \\"../inputs/SortOrderInput\\";
+import \\"../inputs/SortOrderInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"UserOrderByWithRelationInput\\", {})
@@ -970,7 +1028,7 @@ export class UserOrderByWithRelationInput {
   })
   name?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrderInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SortOrderInput\\").SortOrderInput, {
     nullable: true
   })
   balance?: SortOrderInput | undefined;
@@ -983,10 +1041,14 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
-import { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
-import { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
-import { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import type { DateTimeWithAggregatesFilter } from \\"../inputs/DateTimeWithAggregatesFilter\\";
+import type { FloatNullableWithAggregatesFilter } from \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import type { IntWithAggregatesFilter } from \\"../inputs/IntWithAggregatesFilter\\";
+import type { StringWithAggregatesFilter } from \\"../inputs/StringWithAggregatesFilter\\";
+import \\"../inputs/DateTimeWithAggregatesFilter\\";
+import \\"../inputs/FloatNullableWithAggregatesFilter\\";
+import \\"../inputs/IntWithAggregatesFilter\\";
+import \\"../inputs/StringWithAggregatesFilter\\";
 
 @TypeGraphQL.InputType(\\"UserScalarWhereWithAggregatesInput\\", {})
 export class UserScalarWhereWithAggregatesInput {
@@ -1005,22 +1067,22 @@ export class UserScalarWhereWithAggregatesInput {
   })
   NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntWithAggregatesFilter\\").IntWithAggregatesFilter, {
     nullable: true
   })
   id?: IntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeWithAggregatesFilter\\").DateTimeWithAggregatesFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringWithAggregatesFilter\\").StringWithAggregatesFilter, {
     nullable: true
   })
   name?: StringWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableWithAggregatesFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableWithAggregatesFilter\\").FloatNullableWithAggregatesFilter, {
     nullable: true
   })
   balance?: FloatNullableWithAggregatesFilter | undefined;
@@ -1033,23 +1095,26 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateInput\\", {})
 export class UserUpdateInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -1062,23 +1127,26 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
-import { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { DateTimeFieldUpdateOperationsInput } from \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import type { NullableFloatFieldUpdateOperationsInput } from \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/DateTimeFieldUpdateOperationsInput\\";
+import \\"../inputs/NullableFloatFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"UserUpdateManyMutationInput\\", {})
 export class UserUpdateManyMutationInput {
-  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFieldUpdateOperationsInput\\").DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
   dateOfBirth?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => NullableFloatFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./NullableFloatFieldUpdateOperationsInput\\").NullableFloatFieldUpdateOperationsInput, {
     nullable: true
   })
   balance?: NullableFloatFieldUpdateOperationsInput | undefined;
@@ -1091,10 +1159,14 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"UserWhereInput\\", {})
 export class UserWhereInput {
@@ -1113,22 +1185,22 @@ export class UserWhereInput {
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -1141,10 +1213,14 @@ exports[`omit-fields when model field has \`omit(output: true)\` set should prop
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
-import { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
-import { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import type { DateTimeFilter } from \\"../inputs/DateTimeFilter\\";
+import type { FloatNullableFilter } from \\"../inputs/FloatNullableFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import type { UserWhereInput } from \\"../inputs/UserWhereInput\\";
+import \\"../inputs/DateTimeFilter\\";
+import \\"../inputs/FloatNullableFilter\\";
+import \\"../inputs/StringFilter\\";
+import \\"../inputs/UserWhereInput\\";
 
 @TypeGraphQL.InputType(\\"UserWhereUniqueInput\\", {})
 export class UserWhereUniqueInput {
@@ -1153,32 +1229,32 @@ export class UserWhereUniqueInput {
   })
   id?: number | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   AND?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   OR?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => [UserWhereInput], {
+  @TypeGraphQL.Field(_type => [require(\\"./UserWhereInput\\").UserWhereInput], {
     nullable: true
   })
   NOT?: UserWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => DateTimeFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./DateTimeFilter\\").DateTimeFilter, {
     nullable: true
   })
   dateOfBirth?: DateTimeFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => FloatNullableFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./FloatNullableFilter\\").FloatNullableFilter, {
     nullable: true
   })
   balance?: FloatNullableFilter | undefined;
@@ -1228,11 +1304,12 @@ exports[`omit-fields when model field has both create and update omit input set 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateInput\\", {})
 export class SampleModelUpdateInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1245,11 +1322,16 @@ exports[`omit-fields when model field has both create and update omit input set 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
-import { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
-import { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
-import { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
-import { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import type { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import type { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import type { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import type { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import type { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import \\"../inputs/SampleModelSumOrderByAggregateInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"SampleModelOrderByWithAggregationInput\\", {})
@@ -1269,27 +1351,27 @@ export class SampleModelOrderByWithAggregationInput {
   })
   normalField?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelCountOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelCountOrderByAggregateInput\\").SampleModelCountOrderByAggregateInput, {
     nullable: true
   })
   _count?: SampleModelCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelAvgOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelAvgOrderByAggregateInput\\").SampleModelAvgOrderByAggregateInput, {
     nullable: true
   })
   _avg?: SampleModelAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMaxOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMaxOrderByAggregateInput\\").SampleModelMaxOrderByAggregateInput, {
     nullable: true
   })
   _max?: SampleModelMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMinOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMinOrderByAggregateInput\\").SampleModelMinOrderByAggregateInput, {
     nullable: true
   })
   _min?: SampleModelMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelSumOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelSumOrderByAggregateInput\\").SampleModelSumOrderByAggregateInput, {
     nullable: true
   })
   _sum?: SampleModelSumOrderByAggregateInput | undefined;
@@ -1302,8 +1384,10 @@ exports[`omit-fields when model field has both create and update omit input set 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
@@ -1322,17 +1406,17 @@ export class SampleModelWhereInput {
   })
   NOT?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   omittedField?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   normalField?: StringFilter | undefined;
@@ -1382,11 +1466,16 @@ exports[`omit-fields when model field has omit input create set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
-import { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
-import { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
-import { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
-import { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import type { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import type { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import type { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import type { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import type { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import \\"../inputs/SampleModelSumOrderByAggregateInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"SampleModelOrderByWithAggregationInput\\", {})
@@ -1406,27 +1495,27 @@ export class SampleModelOrderByWithAggregationInput {
   })
   normalField?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelCountOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelCountOrderByAggregateInput\\").SampleModelCountOrderByAggregateInput, {
     nullable: true
   })
   _count?: SampleModelCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelAvgOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelAvgOrderByAggregateInput\\").SampleModelAvgOrderByAggregateInput, {
     nullable: true
   })
   _avg?: SampleModelAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMaxOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMaxOrderByAggregateInput\\").SampleModelMaxOrderByAggregateInput, {
     nullable: true
   })
   _max?: SampleModelMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMinOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMinOrderByAggregateInput\\").SampleModelMinOrderByAggregateInput, {
     nullable: true
   })
   _min?: SampleModelMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelSumOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelSumOrderByAggregateInput\\").SampleModelSumOrderByAggregateInput, {
     nullable: true
   })
   _sum?: SampleModelSumOrderByAggregateInput | undefined;
@@ -1439,16 +1528,17 @@ exports[`omit-fields when model field has omit input create set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateInput\\", {})
 export class SampleModelUpdateInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   omittedField?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1461,8 +1551,10 @@ exports[`omit-fields when model field has omit input create set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
@@ -1481,17 +1573,17 @@ export class SampleModelWhereInput {
   })
   NOT?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   omittedField?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   normalField?: StringFilter | undefined;
@@ -1504,11 +1596,16 @@ exports[`omit-fields when model field has omit input orderBy set should properly
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
-import { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
-import { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
-import { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
-import { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import type { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import type { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import type { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import type { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import type { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import \\"../inputs/SampleModelSumOrderByAggregateInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"SampleModelOrderByWithAggregationInput\\", {})
@@ -1523,27 +1620,27 @@ export class SampleModelOrderByWithAggregationInput {
   })
   normalField?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelCountOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelCountOrderByAggregateInput\\").SampleModelCountOrderByAggregateInput, {
     nullable: true
   })
   _count?: SampleModelCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelAvgOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelAvgOrderByAggregateInput\\").SampleModelAvgOrderByAggregateInput, {
     nullable: true
   })
   _avg?: SampleModelAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMaxOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMaxOrderByAggregateInput\\").SampleModelMaxOrderByAggregateInput, {
     nullable: true
   })
   _max?: SampleModelMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMinOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMinOrderByAggregateInput\\").SampleModelMinOrderByAggregateInput, {
     nullable: true
   })
   _min?: SampleModelMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelSumOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelSumOrderByAggregateInput\\").SampleModelSumOrderByAggregateInput, {
     nullable: true
   })
   _sum?: SampleModelSumOrderByAggregateInput | undefined;
@@ -1603,16 +1700,17 @@ exports[`omit-fields when model field has omit input orderBy set should properly
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateInput\\", {})
 export class SampleModelUpdateInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   omittedField?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1625,8 +1723,10 @@ exports[`omit-fields when model field has omit input orderBy set should properly
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
@@ -1645,17 +1745,17 @@ export class SampleModelWhereInput {
   })
   NOT?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   omittedField?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   normalField?: StringFilter | undefined;
@@ -1715,11 +1815,16 @@ exports[`omit-fields when model field has omit input update set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
-import { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
-import { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
-import { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
-import { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import type { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import type { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import type { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import type { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import type { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import \\"../inputs/SampleModelSumOrderByAggregateInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"SampleModelOrderByWithAggregationInput\\", {})
@@ -1739,27 +1844,27 @@ export class SampleModelOrderByWithAggregationInput {
   })
   normalField?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelCountOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelCountOrderByAggregateInput\\").SampleModelCountOrderByAggregateInput, {
     nullable: true
   })
   _count?: SampleModelCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelAvgOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelAvgOrderByAggregateInput\\").SampleModelAvgOrderByAggregateInput, {
     nullable: true
   })
   _avg?: SampleModelAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMaxOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMaxOrderByAggregateInput\\").SampleModelMaxOrderByAggregateInput, {
     nullable: true
   })
   _max?: SampleModelMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMinOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMinOrderByAggregateInput\\").SampleModelMinOrderByAggregateInput, {
     nullable: true
   })
   _min?: SampleModelMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelSumOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelSumOrderByAggregateInput\\").SampleModelSumOrderByAggregateInput, {
     nullable: true
   })
   _sum?: SampleModelSumOrderByAggregateInput | undefined;
@@ -1772,8 +1877,10 @@ exports[`omit-fields when model field has omit input update set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
@@ -1792,17 +1899,17 @@ export class SampleModelWhereInput {
   })
   NOT?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   omittedField?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   normalField?: StringFilter | undefined;
@@ -1815,11 +1922,12 @@ exports[`omit-fields when model field has omit input update set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateInput\\", {})
 export class SampleModelUpdateInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1832,11 +1940,12 @@ exports[`omit-fields when model field has omit input update set should properly 
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateManyMutationInput\\", {})
 export class SampleModelUpdateManyMutationInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1896,11 +2005,16 @@ exports[`omit-fields when model field has omit input where set should properly g
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
-import { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
-import { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
-import { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
-import { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import type { SampleModelAvgOrderByAggregateInput } from \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import type { SampleModelCountOrderByAggregateInput } from \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import type { SampleModelMaxOrderByAggregateInput } from \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import type { SampleModelMinOrderByAggregateInput } from \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import type { SampleModelSumOrderByAggregateInput } from \\"../inputs/SampleModelSumOrderByAggregateInput\\";
+import \\"../inputs/SampleModelAvgOrderByAggregateInput\\";
+import \\"../inputs/SampleModelCountOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMaxOrderByAggregateInput\\";
+import \\"../inputs/SampleModelMinOrderByAggregateInput\\";
+import \\"../inputs/SampleModelSumOrderByAggregateInput\\";
 import { SortOrder } from \\"../../enums/SortOrder\\";
 
 @TypeGraphQL.InputType(\\"SampleModelOrderByWithAggregationInput\\", {})
@@ -1920,27 +2034,27 @@ export class SampleModelOrderByWithAggregationInput {
   })
   normalField?: \\"asc\\" | \\"desc\\" | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelCountOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelCountOrderByAggregateInput\\").SampleModelCountOrderByAggregateInput, {
     nullable: true
   })
   _count?: SampleModelCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelAvgOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelAvgOrderByAggregateInput\\").SampleModelAvgOrderByAggregateInput, {
     nullable: true
   })
   _avg?: SampleModelAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMaxOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMaxOrderByAggregateInput\\").SampleModelMaxOrderByAggregateInput, {
     nullable: true
   })
   _max?: SampleModelMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelMinOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelMinOrderByAggregateInput\\").SampleModelMinOrderByAggregateInput, {
     nullable: true
   })
   _min?: SampleModelMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SampleModelSumOrderByAggregateInput, {
+  @TypeGraphQL.Field(_type => require(\\"./SampleModelSumOrderByAggregateInput\\").SampleModelSumOrderByAggregateInput, {
     nullable: true
   })
   _sum?: SampleModelSumOrderByAggregateInput | undefined;
@@ -1953,16 +2067,17 @@ exports[`omit-fields when model field has omit input where set should properly g
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import type { StringFieldUpdateOperationsInput } from \\"../inputs/StringFieldUpdateOperationsInput\\";
+import \\"../inputs/StringFieldUpdateOperationsInput\\";
 
 @TypeGraphQL.InputType(\\"SampleModelUpdateInput\\", {})
 export class SampleModelUpdateInput {
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   omittedField?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFieldUpdateOperationsInput\\").StringFieldUpdateOperationsInput, {
     nullable: true
   })
   normalField?: StringFieldUpdateOperationsInput | undefined;
@@ -1975,8 +2090,10 @@ exports[`omit-fields when model field has omit input where set should properly g
 import * as GraphQLScalars from \\"graphql-scalars\\";
 import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
 import { DecimalJSScalar } from \\"../../scalars\\";
-import { IntFilter } from \\"../inputs/IntFilter\\";
-import { StringFilter } from \\"../inputs/StringFilter\\";
+import type { IntFilter } from \\"../inputs/IntFilter\\";
+import type { StringFilter } from \\"../inputs/StringFilter\\";
+import \\"../inputs/IntFilter\\";
+import \\"../inputs/StringFilter\\";
 
 @TypeGraphQL.InputType(\\"SampleModelWhereInput\\", {})
 export class SampleModelWhereInput {
@@ -1995,12 +2112,12 @@ export class SampleModelWhereInput {
   })
   NOT?: SampleModelWhereInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./IntFilter\\").IntFilter, {
     nullable: true
   })
   id?: IntFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => require(\\"./StringFilter\\").StringFilter, {
     nullable: true
   })
   normalField?: StringFilter | undefined;

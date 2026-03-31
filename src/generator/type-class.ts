@@ -12,8 +12,8 @@ import path from "path";
 import { outputsFolderName, inputsFolderName } from "./config";
 import {
   generateTypeGraphQLImport,
-  generateInputsImports,
   generateTypeOnlyInputsImports,
+  generateSideEffectInputsImports,
   generateEnumsImports,
   generateArgsImports,
   generateGraphQLScalarsImport,
@@ -30,35 +30,29 @@ import { pascalCase } from "./helpers";
 /**
  * Returns the type thunk expression for a `@Field` decorator argument.
  *
- * For **self-referential** input types (where a field's type is the same
- * class being defined in the current file), a lazy `require()` call is used
- * instead of a direct class reference. This prevents circular module
- * evaluation errors (e.g. Turbopack's "Cannot access X before
- * initialization") that arise because the class binding is not yet
- * established when its own property decorators are evaluated in ESM.
+ * For every `inputObjectType` reference, a lazy `require()` call is used
+ * instead of a direct reference to the imported binding.  This prevents
+ * Temporal Dead Zone (TDZ) errors under Turbopack/ESM where the bundler
+ * can evaluate circular module chains before every class binding is fully
+ * initialised.  Because the thunk is only invoked during `buildSchema()`
+ * — well after all modules have completed their initial evaluation — every
+ * `require()` call returns the already-fully-initialised class.
  *
- * For cross-file input type references that are **not** self-referential,
- * the class is imported via a normal `import` statement at the top of the
- * file so that TypeGraphQL's `@InputType()` decorator runs—and the class
- * gets registered—before `buildSchema` is ever called.
+ * TypeGraphQL registration (the `@InputType()` side-effect) is guaranteed
+ * by the companion `import "./X"` side-effect declaration generated
+ * alongside `import type { X }`.  The side-effect import has no live
+ * binding, so it cannot trigger TDZ in circular chains.
  *
  * @param field - The schema arg representing the field.
- * @param currentTypeName - The name of the input class currently being generated.
  * @returns The expression to use as the first argument of `@Field`.
  */
-function getInputFieldTypeThunk(
-  field: DMMF.SchemaArg,
-  currentTypeName: string,
-): string {
+function getInputFieldTypeThunk(field: DMMF.SchemaArg): string {
   if (field.selectedInputType.location === "inputObjectTypes") {
     const typeName = field.selectedInputType.type;
-    if (typeName === currentTypeName) {
-      // Self-referential: use lazy require() to avoid ESM/Turbopack TDZ.
-      const lazyRef = `require("./${typeName}").${typeName}`;
-      return field.selectedInputType.isList ? `[${lazyRef}]` : lazyRef;
-    }
-    // Cross-file dep: the class is available via a normal top-level import.
-    return field.typeGraphQLType;
+    // Lazy require: safe in circular chains AND guarantees the class is
+    // fully initialised when the thunk is eventually called.
+    const lazyRef = `require("./${typeName}").${typeName}`;
+    return field.selectedInputType.isList ? `[${lazyRef}]` : lazyRef;
   }
   return field.typeGraphQLType;
 }
@@ -219,21 +213,25 @@ export function generateInputTypeClassFromType(
   generateGraphQLScalarsImport(sourceFile);
   generatePrismaNamespaceImport(sourceFile, options, 2);
   generateCustomScalarsImport(sourceFile, 2);
-  // Cross-file input type dependencies: use a normal value import so that
-  // their `@InputType()` decorators run before `buildSchema` collects type
-  // metadata. A direct class reference is used in the `@Field` thunk.
-  generateInputsImports(
-    sourceFile,
-    inputType.fields
-      .filter(field => field.selectedInputType.location === "inputObjectTypes")
-      .map(field => field.selectedInputType.type)
-      .filter(fieldType => fieldType !== inputType.typeName),
-  );
-  // Self-referential fields reference `inputType.typeName` itself, which is
-  // already in scope (defined in this same file). No import is needed.
-  // The `@Field` thunk uses a lazy `require()` to avoid an ESM/Turbopack
-  // TDZ error when the class binding is accessed before initialization
-  // (see `getInputFieldTypeThunk`).
+  // For every cross-file input type dependency we emit TWO import lines:
+  //
+  //   import type { X } from "./X";  // keeps X in scope for TypeScript
+  //   import "./X";                  // side-effect: runs @InputType(), no binding → no TDZ
+  //
+  // Using a normal value `import { X }` would create a live binding that
+  // Turbopack accesses at module-evaluation time, which throws a TDZ
+  // ReferenceError in circular module chains.  The side-effect-only import
+  // has no binding, so it is safe regardless of evaluation order.
+  //
+  // Self-referential types (X === inputType.typeName) are defined in this
+  // same file, so they need no import at all.  Their `@Field` thunks still
+  // use `require()` (see `getInputFieldTypeThunk`) for the same TDZ reason.
+  const crossFileDeps = inputType.fields
+    .filter(field => field.selectedInputType.location === "inputObjectTypes")
+    .map(field => field.selectedInputType.type)
+    .filter(fieldType => fieldType !== inputType.typeName);
+  generateTypeOnlyInputsImports(sourceFile, crossFileDeps);
+  generateSideEffectInputsImports(sourceFile, crossFileDeps);
   generateEnumsImports(
     sourceFile,
     inputType.fields
@@ -276,7 +274,7 @@ export function generateInputTypeClassFromType(
                 {
                   name: "TypeGraphQL.Field",
                   arguments: [
-                    `_type => ${getInputFieldTypeThunk(field, inputType.typeName)}`,
+                    `_type => ${getInputFieldTypeThunk(field)}`,
                     Writers.object({
                       nullable: `${!field.isRequired}`,
                     }),
@@ -300,7 +298,7 @@ export function generateInputTypeClassFromType(
           {
             name: "TypeGraphQL.Field",
             arguments: [
-              `_type => ${getInputFieldTypeThunk(field, inputType.typeName)}`,
+              `_type => ${getInputFieldTypeThunk(field)}`,
               Writers.object({
                 nullable: `${!field.isRequired}`,
               }),
